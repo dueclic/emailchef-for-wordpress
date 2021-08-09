@@ -1,0 +1,156 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: eMailChef\n"
+"POT-Creation-Date: 2020-12-15 12:00+0100\n"
+"PO-Revision-Date: 2016-04-29 15:30+0100\n"
+"Last-Translator: \n"
+"Language-Team: eMailChef <info@nicolamoretti.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/class-emailchef-admin.php:89
+msgid "Forms"
+msgstr ""
+
+#: ../admin/class-emailchef-admin.php:93
+#: ../admin/partials/emailchef-page-settings-display.php:3
+msgid "Settings"
+msgstr ""
+
+#: ../admin/class-emailchef-admin.php:134
+msgid "Account details"
+msgstr ""
+
+#: ../admin/class-emailchef-admin.php:141
+msgid "Email"
+msgstr ""
+
+#: ../admin/class-emailchef-admin.php:149
+msgid "Password"
+msgstr ""
+
+#: ../admin/class-emailchef-admin.php:185
+#, php-format
+msgid ""
+"Please provide same login information used to login in <a target=\"_blank\" "
+"href=\"%s\">emailchef.com</a> website. Or <a target=\"_blank\" href=\"%s"
+"\">click here</a> to try it for free."
+msgstr ""
+
+#: ../admin/class-emailchef-admin.php:254
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:40
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:145
+msgid "Please add authentication details in Settings panel"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-display.php:1
+msgid "eMailChef Forms"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-display.php:2
+#, php-format
+msgid ""
+"Connect contact forms to automatically populate your <a target=\"_blank\" "
+"href=\"%s\">eMailChef</a> lists on every submission."
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-display.php:3
+msgid "These are the contact forms found in your site:"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-display.php:31
+msgid "warning: connection required!"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-display.php:35
+msgid "Loading.."
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:6
+msgid "eMailChef List:"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:9
+msgid "Select the list and save."
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:27
+msgid "Map"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:30
+msgid "Save to reload list fields"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:33
+msgid ""
+"Map form fields with eMailChef List fields. <br><em class=\"at-least-email"
+"\">At least an email field needs to be mapped to enable the connection.</em>"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:34
+msgid "Remember to save your changes."
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:39
+msgid "Form field"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:40
+msgid "eMailChef List field"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:80
+msgid "Create and map unmapped fields automatically"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:88
+msgid "Reset"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-form.php:90
+msgid "Save"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-settings-display.php:10
+#: ../admin/partials/emailchef-page-settings-display.php:41
+msgid "Test Login"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-settings-display.php:35
+msgid "Please Wait.."
+msgstr ""
+
+#: ../admin/partials/emailchef-page-settings-display.php:43
+msgid "Login correct!"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-settings-display.php:46
+msgid "Login failed"
+msgstr ""
+
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:51
+msgid "Unable to authenticate"
+msgstr ""
+
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-contactform7.php:22
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-jetpack.php:25
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-wpforms.php:17
+#, php-format
+msgid "<strong>%s</strong> - page ID %s"
+msgstr ""
+
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-fastsecurecontactform.php:17
+#, php-format
+msgid "<strong>%s</strong> - form %s"
+msgstr ""
+
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-wpforms.php:74
+msgid "Please insert only one choice in checkbox field"
+msgstr ""

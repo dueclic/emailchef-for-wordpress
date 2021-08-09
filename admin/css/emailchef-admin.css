@@ -1,0 +1,127 @@
+#wpbody-content {
+    padding-top:110px;
+    background:url('./../img/logo.png') no-repeat top 20px left;
+}
+/** Do not display update in these pages **/
+.update-nag{
+    display:none;
+}
+
+
+
+/***/
+
+.error-field{
+   color: red;
+}
+
+.emailchef-form {
+    /*width: 100% !important;*/
+    max-width: 100% !important;
+    margin-right: 1.5em;
+}
+.emailchef-form .map-reload {
+    display: none;
+}
+
+.emailchef-form .form-table td.nopadding {
+    padding: 0;
+    max-width:170px !important;
+}
+
+.emailchef-form select {
+    max-width:100% !important;
+}
+
+.emailchef-form .save {
+    margin: 0 0 0 10px !important;
+}
+
+.emailchef-check-login-result {
+    line-height: 27px;
+    padding: 0 10px;
+}
+
+.emailchef-check-login-result.error {
+    color: red;
+}
+
+.emailchef-check-login-result.valid {
+    color: green;
+}
+
+input[name="emailchef_settings\[emailchef_email\]"].error,
+input[name="emailchef_settings\[emailchef_password\]"].error {
+    border-color: red;
+}
+
+input[name="emailchef_settings\[emailchef_email\]"].valid,
+input[name="emailchef_settings\[emailchef_password\]"].valid {
+    border-color: green;
+}
+
+.js .emailchef-form .control-section.open .accordion-section-title{
+   color: #FFF;
+   background: #F47200;
+   /*font-weight: bold;*/
+}
+.js .emailchef-form  .control-section.open .accordion-section-title .not-connected{
+   color: #FFF;
+}
+.control-section.open .accordion-section-title:after{
+   color: #FFF;
+}
+
+.accordion-section .not-connected {
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    color: red;
+}
+.accordion-section.active .not-connected {
+    display: none;
+}
+.accordion-section .form-table-container{
+    border:1px solid #ccc;
+    padding:.5em;
+    margin-top:.5em;
+    margin-bottom: 1em;
+}
+.accordion-section.warning .form-table-container,
+.accordion-section.warning .list-id{
+    border-color:red;
+}
+.accordion-section .warning-select-list{
+    display:none;
+    color:red;
+}
+.accordion-section.warning .warning-select-list{
+    display:block;
+}
+.accordion-section.warning-map .form-table-container{
+    border-color:red;
+}
+.accordion-section.warning-map .at-least-email{
+    color:red;
+}
+.accordion-section .form-table td,
+.accordion-section .form-table th{
+   border-bottom: 1px solid #ddd;
+}
+.accordion-section .form-table th{
+   font-size: 1.1em;
+}
+.accordion-section .form-table tr:last-child td,
+.accordion-section .form-table tr:last-child th{
+   border: none;
+}
+.accordion-section .form-table th {
+    padding: .5em;
+}
+.accordion-section .form-table td {
+    padding: .5em;
+}
+.auto-create{
+   text-align: center;
+   padding-bottom: 1em;
+}
