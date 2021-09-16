@@ -15,7 +15,7 @@ class GetPredefinedFieldsCommand
 
     public function execute($authKey)
     {
-        $response = $this->apiService->call('get', 'apps/api/v1/predefinedfields ', null, $authKey);
+        $response = $this->apiService->call('get', 'apps/api/v1/predefinedfields', null, $authKey);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to get predefined fields');
         } else {
