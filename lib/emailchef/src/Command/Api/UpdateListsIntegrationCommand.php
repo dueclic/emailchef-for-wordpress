@@ -15,7 +15,7 @@ class UpdateListsIntegrationCommand
 
     public function execute($authKey, $listId, $integrationId)
     {
-	    $args = array(
+	    $data = array(
 
 		    "instance_in" => array(
 			    "list_id"        => $listId,

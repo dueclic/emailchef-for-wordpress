@@ -9,6 +9,7 @@
 
 use EMailChef\Command\Api\CreateCustomFieldCommand;
 use EMailChef\Command\Api\CreateListsIntegrationCommand;
+use EMailChef\Command\Api\UpdateListsIntegrationCommand;
 use EMailChef\Command\Api\GetListsIntegrationCommand;
 
 /**
@@ -265,12 +266,12 @@ class Emailchef_Admin {
 			$found         = false;
 
 			$getListsIntegration = new GetListsIntegrationCommand();
-			$integrations        = json_decode( $getListsIntegration->execute( $accessKey, $formData['listId'] ), true );
+			$integrations        = $getListsIntegration->execute( $accessKey, $formData['listId'] );
 
 			foreach ( $integrations as $integration ) {
-				if ( $integration["id"] == 5 && $integration["website"] == get_site_url() ) {
+				if ( $integration->id == 5 && $integration->website == get_site_url() ) {
 
-					$idIntegration = $integration["row_id"];
+					$idIntegration = $integration->row_id;
 					$found         = true;
 				}
 			}
