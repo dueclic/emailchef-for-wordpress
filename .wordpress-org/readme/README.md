@@ -4,7 +4,7 @@ Donate link: https://www.dueclic.com
 Tags: emailchef, newsletter, email, marketing, automation, form, forms
 Requires at least: 5.0
 Tested up to: 6.0
-Stable tag: 1.9
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ Register for free in eMailChef and get your free trial period. Higher plans can 
 2. Connect your forms with eMailChef
 
 == Changelog ==
+
+= 2.0 =
+* Update for PHP8 support
 
 = 1.9 =
 * changed logos / internal links
