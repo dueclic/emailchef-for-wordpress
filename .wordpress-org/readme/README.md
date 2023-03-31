@@ -3,8 +3,8 @@ Contributors: dueclic, hanicker
 Donate link: https://www.dueclic.com
 Tags: emailchef, newsletter, email, marketing, automation, form, forms
 Requires at least: 5.0
-Tested up to: 6.1
-Stable tag: 2.1
+Tested up to: 6.2
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ Register for free in eMailChef and get your free trial period. Higher plans can 
 2. Connect your forms with eMailChef
 
 == Changelog ==
+
+= 2.2 =
+* WP 6.2 compatibility
 
 = 2.1 =
 * WP 6.1 compatibility
