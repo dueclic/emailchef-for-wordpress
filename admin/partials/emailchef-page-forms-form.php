@@ -3,7 +3,7 @@
         <tbody>
         <tr>
             <th scope="row"><label
-                    for="<?php echo htmlentities($driverName, ENT_QUOTES) ?>-<?php echo htmlentities($id, ENT_QUOTES) ?>-list"><?php echo __('eMailChef List:', 'emailchef') ?></label>
+                    for="<?php echo htmlentities($driverName, ENT_QUOTES) ?>-<?php echo htmlentities($id, ENT_QUOTES) ?>-list"><?php echo __('Emailchef List:', 'emailchef') ?></label>
             </th>
             <td>
                 <p class="warning-select-list"><?php echo __('Select the list and save.', 'emailchef') ?></p>
@@ -30,14 +30,14 @@
                     <p><?php echo __('Save to reload list fields', 'emailchef') ?></p>
                 </div>
                 <div class="content-map">
-                    <p><?php echo __('Map form fields with eMailChef List fields. <br><em class="at-least-email">At least an email field needs to be mapped to enable the connection.</em>', 'emailchef') ?></p>
+                    <p><?php echo __('Map form fields with Emailchef List fields. <br><em class="at-least-email">At least an email field needs to be mapped to enable the connection.</em>', 'emailchef') ?></p>
                     <p><?php echo __('Remember to save your changes.', 'emailchef') ?></p>
                     <div class="form-table-container">
                         <table class="form-table">
                             <thead>
                             <tr>
                                 <th><?php echo __('Form field', 'emailchef') ?></th>
-                                <th><?php echo __('eMailChef List field', 'emailchef') ?></th>
+                                <th><?php echo __('Emailchef List field', 'emailchef') ?></th>
                             </tr>
                             </thead>
                             <tbody>

@@ -1,5 +1,5 @@
-<h1><?php _e("eMailChef Forms", "emailchef"); ?></h1>
-<p><?php echo sprintf(__('Connect contact forms to automatically populate your <a target="_blank" href="%s">eMailChef</a> lists on every submission.', 'emailchef'),'http://emailchef.com/'); ?></p>
+<h1><?php _e("Emailchef Forms", "emailchef"); ?></h1>
+<p><?php echo sprintf(__('Connect contact forms to automatically populate your <a target="_blank" href="%s">Emailchef</a> lists on every submission.', 'emailchef'),'http://emailchef.com/'); ?></p>
 <p><?php echo __('These are the contact forms found in your site:', 'emailchef'); ?></p>
 <script>
 	var urlToSettingsPage = <?php echo json_encode(admin_url('admin.php?page=emailchef-options')); ?>

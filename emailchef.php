@@ -8,7 +8,7 @@
  * Plugin Name:       eMailChef
  * Plugin URI:        http://emailchef.com/
  * Description:       eMailChef: The simplest recipe to cook amazing newsletters. Automatically synchronize form submissions from Contact Form 7, FSCF and Jetpack.
- * Version:           2.3
+ * Version:           2.4
  * Author:            dueclic
  * Author URI:        https://www.dueclic.com
  * License:           GPL-2.0+
@@ -27,14 +27,14 @@ function emailchef_write_log($log)
 {
 	if (true === WP_DEBUG) {
 		if (is_array($log) || is_object($log)) {
-			error_log('eMailChef' . print_r($log, true));
+			error_log('Emailchef' . print_r($log, true));
 		} else {
-			error_log('eMailChef' . $log);
+			error_log('Emailchef' . $log);
 		}
 	}
 }
 
-// Load eMailChef library
+// Load Emailchef library
 include plugin_dir_path(__FILE__) . 'lib/emailchef/vendor/autoload.php';
 
 /**

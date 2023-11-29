@@ -82,16 +82,16 @@ class Emailchef_Admin {
 	 * Menu and submenu in admin
 	 */
 	public function menu() {
-		add_menu_page( 'emailchef', 'eMailChef', 'manage_options', 'emailchef', array(
+		add_menu_page( 'emailchef', 'Emailchef', 'manage_options', 'emailchef', array(
 			$this,
 			'page_forms',
 		), 'dashicons-email-alt', 50 );
 
-		add_submenu_page( 'emailchef', 'eMailChef Forms', __( 'Forms', 'emailchef' ), 'manage_options', 'emailchef', array(
+		add_submenu_page( 'emailchef', 'Emailchef Forms', __( 'Forms', 'emailchef' ), 'manage_options', 'emailchef', array(
 			$this,
 			'page_forms',
 		) );
-		add_submenu_page( 'emailchef', 'eMailChef Settings', __( 'Settings', 'emailchef' ), 'manage_options', 'emailchef-options', array(
+		add_submenu_page( 'emailchef', 'Emailchef Settings', __( 'Settings', 'emailchef' ), 'manage_options', 'emailchef-options', array(
 			$this,
 			'page_options',
 		) );
