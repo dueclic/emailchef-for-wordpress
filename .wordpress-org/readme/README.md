@@ -4,7 +4,7 @@ Donate link: https://www.dueclic.com
 Tags: Emailchef, newsletter, email, marketing, automation, form, forms
 Requires at least: 5.0
 Tested up to: 6.4.1
-Stable tag: 2.6
+Stable tag: 2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,10 @@ Register for free in Emailchef and get your free trial period. Higher plans can 
 2. Connect your forms with Emailchef
 
 == Changelog ==
+
+= 2.7 =
+* privacy, terms and newsletter fields - sync fixes
+* added new icon in admin menu
 
 = 2.6 =
 * bugfixes

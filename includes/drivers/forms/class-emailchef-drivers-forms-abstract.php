@@ -121,17 +121,32 @@ abstract class Emailchef_Drivers_Forms_Abstract
         $listId = $form['listId'];
 
         $map = $form['field'];
+
         $mappingEmail = false;
         $toSend = array();
         foreach ($map as $key => $value) {
             if (!isset($data[$key]) || empty($value)) {
                 continue;
             }
+
+            if ($value === "privacy_accepted"){
+                $value = "privacy";
+            }
+
+            if ($value === "terms_accepted"){
+                $value = "terms";
+            }
+
+            if ($value === "newsletter_accepted"){
+                $value = "newsletter";
+            }
+
             $toSend[$value] = $data[$key];
             if ($value == 'email') {
                 $mappingEmail = true;
             }
         }
+
 
         if (!$mappingEmail) {
             return; // nothing mapping to email

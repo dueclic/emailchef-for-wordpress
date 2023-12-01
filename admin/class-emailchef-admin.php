@@ -85,7 +85,7 @@ class Emailchef_Admin {
 		add_menu_page( 'emailchef', 'Emailchef', 'manage_options', 'emailchef', array(
 			$this,
 			'page_forms',
-		), 'dashicons-email-alt', 50 );
+		), plugin_dir_url( __FILE__ ) . 'img/icon.png', 50 );
 
 		add_submenu_page( 'emailchef', 'Emailchef Forms', __( 'Forms', 'emailchef' ), 'manage_options', 'emailchef', array(
 			$this,

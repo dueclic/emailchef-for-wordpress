@@ -19,10 +19,16 @@ class CreateContactCommand
 	    $email = isset($toSend['email']) ? $toSend['email'] : '';
     	$first_name = isset($toSend['first_name']) ? $toSend['first_name'] : '';
 	    $last_name = isset($toSend['last_name']) ? $toSend['last_name'] : '';
+        $privacy = isset($toSend['privacy']) ? (int)$toSend['privacy'] : 0;
+        $terms = isset($toSend['terms']) ? (int)$toSend['terms'] : 0;
+        $newsletter = isset($toSend['newsletter']) ? (int)$toSend['newsletter'] : 0;
 
 	    unset($toSend['email']);
 	    unset($toSend['first_name']);
 	    unset($toSend['last_name']);
+        unset($toSend['privacy']);
+        unset($toSend['terms']);
+        unset($toSend['newsletter']);
 
 	    $data = array(
             'instance_in' => array(
@@ -31,6 +37,9 @@ class CreateContactCommand
                 'mode' => 'SINGLE_OPT_IN',
                 'firstname' => $first_name,
                 'lastname' => $last_name,
+                'privacy' => $privacy,
+                'terms' => $terms,
+                'newsletter' => $newsletter,
                 'status' => 'ACTIVE',
                 'custom_fields' => $toSend,
             ),
