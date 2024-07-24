@@ -1,10 +1,10 @@
 === Emailchef ===
-Contributors: dueclic, hanicker
+Contributors: dueclic
 Donate link: https://www.dueclic.com
 Tags: Emailchef, newsletter, email, marketing, automation, form, forms
 Requires at least: 5.0
-Tested up to: 6.4.1
-Stable tag: 2.7
+Tested up to: 6.6
+Stable tag: 2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ It also supports customized fields you can use to segment your customers! E.g. i
 
 == Installation ==
 
-1. Upload `Emailchef` folder to the `/wp-content/plugins/` directory
+1. Upload `emailchef-for-wordpress` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Visit the new section 'Emailchef' in your dashboard and set your login information ('Emailchef' > 'Settings')
 4. Start connecting your forms through the 'Emailchef' > 'Forms' section.
@@ -42,6 +42,8 @@ Register for free in Emailchef and get your free trial period. Higher plans can 
 
 == Changelog ==
 
+= 2.8 =
+* extended compatibility to WP 6.6
 = 2.7 =
 * privacy, terms and newsletter fields - sync fixes
 * added new icon in admin menu

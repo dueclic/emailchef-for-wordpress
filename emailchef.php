@@ -8,7 +8,7 @@
  * Plugin Name:       Emailchef
  * Plugin URI:        http://emailchef.com/
  * Description:       Emailchef: The simplest recipe to cook amazing newsletters. Automatically synchronize form submissions from Contact Form 7, FSCF and Jetpack.
- * Version:           2.7
+ * Version:           2.8
  * Author:            dueclic
  * Author URI:        https://www.dueclic.com
  * License:           GPL-2.0+
