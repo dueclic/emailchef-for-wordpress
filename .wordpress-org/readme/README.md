@@ -4,11 +4,11 @@ Donate link: https://www.dueclic.com
 Tags: Emailchef, newsletter, email, marketing, automation, form, forms
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 2.8
+Stable tag: 2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Emailchef: The simplest recipe to cook amazing newsletters. Automatically synchronize form submissions from Contact Form 7, FSCF and Jetpack.
+Emailchef: the simplest recipe to cook amazing newsletters. Automatically synchronize form submissions from Contact Form 7, FSCF and Jetpack.
 
 == Description ==
 

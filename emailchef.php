@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @link              http://emailchef.com/
+ * @link              https://emailchef.com/
  * @since             1.0.0
  *
  * @wordpress-plugin
  * Plugin Name:       Emailchef
- * Plugin URI:        http://emailchef.com/
- * Description:       Emailchef: The simplest recipe to cook amazing newsletters. Automatically synchronize form submissions from Contact Form 7, FSCF and Jetpack.
- * Version:           2.8
+ * Plugin URI:        https://emailchef.com/
+ * Description:       Emailchef: the simplest recipe to cook amazing newsletters. Automatically synchronize form submissions from Contact Form 7, FSCF and Jetpack.
+ * Version:           2.9
  * Author:            dueclic
  * Author URI:        https://www.dueclic.com
  * License:           GPL-2.0+

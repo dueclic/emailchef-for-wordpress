@@ -183,7 +183,7 @@ class Emailchef_Admin {
 	 * Settings page top description
 	 */
 	public function page_options_settings_section_callback() {
-		echo sprintf( __( 'Please provide same login information used to login in <a target="_blank" href="%s">emailchef.com</a> website. Or <a target="_blank" href="%s">click here</a> to try it for free.', 'emailchef' ), 'http://emailchef.com/', 'https://app.emailchef.com/apps/demo/quicksignup' );
+		echo sprintf( __( 'Please provide same login information used to login in <a target="_blank" href="%s">emailchef.com</a> website. Or <a target="_blank" href="%s">click here</a> to try it for free.', 'emailchef' ), 'https://emailchef.com/', 'https://app.emailchef.com/apps/demo/quicksignup' );
 	}
 
 	/**
