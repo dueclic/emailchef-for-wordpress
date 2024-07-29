@@ -1,7 +1,7 @@
 === Emailchef ===
 Contributors: dueclic
 Donate link: https://www.dueclic.com
-Tags: Emailchef, newsletter, email, marketing, automation, form, forms
+Tags: Emailchef, newsletter, email, marketing, automation, form
 Requires at least: 5.0
 Tested up to: 6.6
 Stable tag: 2.9
