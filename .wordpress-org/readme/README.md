@@ -3,8 +3,8 @@ Contributors: dueclic
 Donate link: https://www.dueclic.com
 Tags: emailchef, newsletter, marketing, automation, form
 Requires at least: 5.0
-Tested up to: 6.6
-Stable tag: 2.9
+Tested up to: 6.7
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,9 @@ Register for free in Emailchef and get your free trial period. Higher plans can 
 2. Connect your forms with Emailchef
 
 == Changelog ==
+
+= 3.0 =
+* extended compatibility to WP 6.7
 
 = 2.8 =
 * extended compatibility to WP 6.6
