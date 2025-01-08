@@ -67,7 +67,7 @@ class Emailchef_Drivers_Forms_WPFormsLite extends Emailchef_Drivers_Forms_Abstra
                     );
                 }
             } else {
-                if (count($field['choices']) > 1) {
+                if (!is_null($field['choices']) && count($field['choices']) > 1) {
                     $ret[] = array(
                         'id'    => $field['id'],
                         'title' => $field['label'],
