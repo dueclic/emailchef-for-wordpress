@@ -46,6 +46,7 @@ class Emailchef_Drivers_Forms_Elementor extends Emailchef_Drivers_Forms_Abstract
             if ( isset( $element['widgetType'] ) && $element['widgetType'] === 'form' ) {
                 $forms[] = [
                     'id' => $element['id'],
+                    'name' => $element['settings']['form_name']
                 ];
             }
 
@@ -82,7 +83,7 @@ class Emailchef_Drivers_Forms_Elementor extends Emailchef_Drivers_Forms_Abstract
                     if ($form['id']) {
                         $forms[] = [
                             'id' => 'page_'.$post_id."_form_".$form['id'],
-                            'title' => get_the_title($post_id),
+                            'title' => sprintf(__('<strong>%s</strong> - page ID %s', 'emailchef'), $form['name'], $post_id),
                         ];
                     }
                 }
