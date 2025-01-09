@@ -13,7 +13,7 @@ class UpdateSegmentCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($authKey, $listId, $name, $description, $logic = 'AND', $conditionGroups, $groupId)
+    public function execute($consumerKey, $consumerSecret, $listId, $name, $description, $logic, $conditionGroups, $groupId)
     {
         $data = array(
             'instance_in' => array(
@@ -27,7 +27,7 @@ class UpdateSegmentCommand
                 'tmp_description' => $description,
             ),
         );
-        $response = $this->apiService->call('put', 'apps/api/v1/segments/' . $groupId . '?list_id=' . $listId, json_encode($data), $authKey);
+        $response = $this->apiService->call('put', '/apps/api/v1/segments/' . $groupId . '?list_id=' . $listId, json_encode($data), $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to update segment');
         } else {

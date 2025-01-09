@@ -13,7 +13,7 @@ class CreateListsIntegrationCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($authKey, $listId)
+    public function execute($consumerKey, $consumerSecret, $listId)
     {
         $data = array(
             'instance_in' => array(
@@ -22,7 +22,7 @@ class CreateListsIntegrationCommand
 	            "website"        => get_site_url(),
             ),
         );
-        $response = $this->apiService->call('post', 'apps/api/v1/integrations', json_encode($data), $authKey);
+        $response = $this->apiService->call('post', '/apps/api/v1/integrations', json_encode($data), $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to create integration');
         } else {

@@ -13,7 +13,7 @@ class DeleteContactCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($listId, $contactId, $authKey)
+    public function execute($listId, $contactId, $consumerKey, $consumerSecret)
     {
         $data = array(
             'instance_in' => array(
@@ -23,7 +23,7 @@ class DeleteContactCommand
                 'remove' => true,
             ),
         );
-        $response = $this->apiService->call('delete', 'apps/api/v1/contacts/' . $contactId, $data, $authKey);
+        $response = $this->apiService->call('delete', '/apps/api/v1/contacts/' . $contactId, $data, $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to login');
         } else {

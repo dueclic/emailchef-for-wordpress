@@ -13,9 +13,9 @@ class GetSegmentCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($authKey, $listId, $segmentId)
+    public function execute($consumerKey, $consumerSecret, $listId, $segmentId)
     {
-        $response = $this->apiService->call('get', 'apps/api/v1/lists/' . $listId . '/segments/' . $segmentId, null, $authKey);
+        $response = $this->apiService->call('get', '/apps/api/v1/lists/' . $listId . '/segments/' . $segmentId, null, $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to get segment');
         } else {

@@ -13,9 +13,9 @@ class GetListsCommand
 		$this->apiService = $apiService ?: new ApiService();
 	}
 
-	public function execute($authKey, $fillGroups = true)
+	public function execute($consumerKey, $consumerSecret, $fillGroups = true)
 	{
-		$response = $this->apiService->call('get', 'apps/api/v1/lists?limit=1000', null, $authKey);
+		$response = $this->apiService->call('get', '/apps/api/v1/lists?limit=1000', null, $consumerKey, $consumerSecret);
 		if ($response['code'] != '200') {
 			throw new \Exception('Unable to login');
 		} else {
@@ -24,7 +24,7 @@ class GetListsCommand
 			if ($fillGroups) {
 				$getListSegmentsCommand = new GetListSegmentsCommand();
 				foreach ($lists as &$list) {
-					$list->groups = $getListSegmentsCommand->execute($list->id, $authKey);
+					$list->groups = $getListSegmentsCommand->execute($list->id, $consumerKey, $consumerSecret);
 					if (!is_array($list->groups)) {
 						$list->groups = array();
 					}

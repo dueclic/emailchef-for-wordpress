@@ -13,7 +13,7 @@ class ImportContactsCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($authKey, $contacts, $listId)
+    public function execute($consumerKey, $consumerSecret, $contacts, $listId)
     {
         $contactsImport = array();
         foreach ($contacts as $contact) {
@@ -33,7 +33,7 @@ class ImportContactsCommand
                 'notification_link' => '',
             ),
         );
-        $response = $this->apiService->call('post', 'apps/api/v1/lists/' . $listId . '/import', json_encode($data), $authKey);
+        $response = $this->apiService->call('post', '/apps/api/v1/lists/' . $listId . '/import', json_encode($data), $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to import contacts');
         } else {

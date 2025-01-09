@@ -13,9 +13,9 @@ class GetContactFromEmailCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($listId, $email, $authKey)
+    public function execute($listId, $email, $consumerKey, $consumerSecret)
     {
-        $response = $this->apiService->call('get', 'apps/api/v1/contacts?limit=1000&list_id=' . $listId . '&query_string=' . urlencode($email), null, $authKey);
+        $response = $this->apiService->call('get', '/apps/api/v1/contacts?limit=1000&list_id=' . $listId . '&query_string=' . urlencode($email), null, $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to get contacts');
         } else {

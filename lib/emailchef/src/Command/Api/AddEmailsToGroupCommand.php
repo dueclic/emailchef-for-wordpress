@@ -13,10 +13,10 @@ class AddEmailsToGroupCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($authKey, $emails, $listId, $groupId)
+    public function execute($consumerKey, $consumerSecret, $emails, $listId, $groupId)
     {
         $getSegmentCommand = new GetSegmentCommand();
-        $currentSegment = $getSegmentCommand->execute($authKey, $listId, $groupId);
+        $currentSegment = $getSegmentCommand->execute($consumerKey, $consumerSecret, $listId, $groupId);
         $updateSegmentCommand = new UpdateSegmentCommand();
         $conditionGroups = array();
         $conditionGroups['logic'] = 'OR';
@@ -34,7 +34,7 @@ class AddEmailsToGroupCommand
             );
         }
         $conditionGroups = array($conditionGroups);
-        $result = $updateSegmentCommand->execute($authKey, $listId, $currentSegment->name, $currentSegment->description, 'OR', $conditionGroups, $groupId);
+        $result = $updateSegmentCommand->execute($consumerKey, $consumerSecret, $listId, $currentSegment->name, $currentSegment->description, 'OR', $conditionGroups, $groupId);
 
         return $result;
     }

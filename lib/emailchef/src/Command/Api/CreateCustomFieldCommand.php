@@ -17,7 +17,7 @@ class CreateCustomFieldCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($authKey, $listId, $type, $name, $placeHolder)
+    public function execute($consumerKey, $consumerSecret, $listId, $type, $name, $placeHolder)
     {
         $data = array(
             'instance_in' => array(
@@ -26,7 +26,7 @@ class CreateCustomFieldCommand
                 'place_holder' => $placeHolder,
             ),
         );
-        $response = $this->apiService->call('post', 'apps/api/v1/lists/' . $listId . '/customfields', json_encode($data), $authKey);
+        $response = $this->apiService->call('post', '/apps/api/v1/lists/' . $listId . '/customfields', json_encode($data), $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to create custom field');
         } else {

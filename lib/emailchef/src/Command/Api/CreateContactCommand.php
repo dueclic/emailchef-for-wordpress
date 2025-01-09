@@ -13,7 +13,7 @@ class CreateContactCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($listId, $toSend, $authKey)
+    public function execute($listId, $toSend, $consumerKey = null, $consumerSecret = null)
     {
 
 	    $email = isset($toSend['email']) ? $toSend['email'] : '';
@@ -45,7 +45,7 @@ class CreateContactCommand
             ),
         );
 
-        $response = $this->apiService->call('post', 'apps/api/v1/contacts', json_encode($data), $authKey);
+        $response = $this->apiService->call('post', '/apps/api/v1/contacts', json_encode($data), $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to create contact');
         } else {

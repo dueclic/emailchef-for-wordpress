@@ -13,17 +13,13 @@ class GetAuthenticationTokenCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($username, $password)
+    public function execute($consumer_key, $consumer_secret)
     {
-        $response = $this->apiService->call('post', 'api/login', json_encode(array('username' => $username, 'password' => $password)));
+        $response = $this->apiService->call('get', '/apps/api/v1/accounts/current', [], $consumer_key, $consumer_secret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to login');
         } else {
-            if (ApiService::STAGING) {
-                return $response['body']->authkeystaging;
-            }
-
-            return $response['body']->authkey;
+            return $response['body'];
         }
     }
 }

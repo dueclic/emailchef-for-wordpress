@@ -13,9 +13,9 @@ class GetListsIntegrationCommand
 		$this->apiService = $apiService ?: new ApiService();
 	}
 
-	public function execute($authKey, $list_id)
+	public function execute($consumerKey, $consumerSecret, $list_id)
 	{
-		$response = $this->apiService->call('get', 'apps/api/v1/lists/'.$list_id.'/integrations', null, $authKey);
+		$response = $this->apiService->call('get', '/apps/api/v1/lists/'.$list_id.'/integrations', null, $consumerKey, $consumerSecret);
 		if ($response['code'] != '200') {
 			throw new \Exception('Unable to login');
 		} else {

@@ -13,9 +13,9 @@ class GetListFieldsCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($listId, $authKey)
+    public function execute($listId, $consumerKey, $consumerSecret)
     {
-        $response = $this->apiService->call('get', 'apps/api/v1/lists/' . $listId . '/customfields', null, $authKey);
+        $response = $this->apiService->call('get', '/apps/api/v1/lists/' . $listId . '/customfields', null, $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to get custom fields');
         } else {

@@ -13,10 +13,10 @@ class ImportContactsInGroupCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($authKey, $contacts, $listId, $groupId)
+    public function execute($consumerKey, $consumerSecret, $contacts, $listId, $groupId)
     {
         $importContactsCommand = new ImportContactsCommand();
-        $importContactsCommand->execute($authKey, $contacts, $listId);
+        $importContactsCommand->execute($consumerKey, $consumerSecret, $contacts, $listId);
 
         $emails = array();
         foreach ($contacts as $contact) {
@@ -24,7 +24,7 @@ class ImportContactsInGroupCommand
         }
 
         $addEmailsToGroupCommand = new AddEmailsToGroupCommand();
-        $addEmailsToGroupCommand->execute($authKey, $emails, $listId, $groupId);
+        $addEmailsToGroupCommand->execute($consumerKey, $consumerSecret, $emails, $listId, $groupId);
 
         return true;
     }

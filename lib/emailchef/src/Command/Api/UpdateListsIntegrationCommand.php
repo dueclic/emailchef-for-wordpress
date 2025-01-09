@@ -13,7 +13,7 @@ class UpdateListsIntegrationCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
-    public function execute($authKey, $listId, $integrationId)
+    public function execute($consumerKey, $consumerSecret, $listId, $integrationId)
     {
 	    $data = array(
 
@@ -25,7 +25,7 @@ class UpdateListsIntegrationCommand
 
 	    );
 
-        $response = $this->apiService->call('put', 'apps/api/v1/integrations/' . $integrationId, json_encode($data), $authKey);
+        $response = $this->apiService->call('put', '/apps/api/v1/integrations/' . $integrationId, json_encode($data), $consumerKey, $consumerSecret);
         if ($response['code'] != '200') {
             throw new \Exception('Unable to update integration');
         } else {
