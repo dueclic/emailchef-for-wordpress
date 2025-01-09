@@ -8,8 +8,8 @@
         checkLogin: function (email, password, callback) {
             var data = {
                 'action': 'emailchef_check_login',
-                'email': email,
-                'password': password
+                'consumer_key': email,
+                'consumer_secret': password
             };
 
             jQuery.post(ajaxurl, data, function (response) {

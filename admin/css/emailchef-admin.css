@@ -50,13 +50,13 @@
     color: green;
 }
 
-input[name="emailchef_settings\[emailchef_email\]"].error,
-input[name="emailchef_settings\[emailchef_password\]"].error {
+input[name="emailchef_settings\[consumer_key\]"].error,
+input[name="emailchef_settings\[consumer_secret\]"].error {
     border-color: red;
 }
 
-input[name="emailchef_settings\[emailchef_email\]"].valid,
-input[name="emailchef_settings\[emailchef_password\]"].valid {
+input[name="emailchef_settings\[consumer_key\]"].valid,
+input[name="emailchef_settings\[consumer_secret\]"].valid {
     border-color: green;
 }
 

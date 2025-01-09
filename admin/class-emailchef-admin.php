@@ -138,17 +138,17 @@ class Emailchef_Admin {
 		);
 
 		add_settings_field(
-			'emailchef_email',
-			__( 'Email', 'emailchef' ),
-			array( $this, 'page_options_email_render' ),
+			'emailchef_consumer_key',
+			__( 'Consumer Key', 'emailchef' ),
+			array( $this, 'page_options_consumer_key_render'),
 			'pluginPage',
 			'emailchef_pluginPage_section'
 		);
 
 		add_settings_field(
-			'emailchef_password',
-			__( 'Password', 'emailchef' ),
-			array( $this, 'page_options_password_render' ),
+			'emailchef_consumer_secret',
+			__( 'Consumer Secret', 'emailchef' ),
+			array( $this, 'page_options_consumer_secret_render' ),
 			'pluginPage',
 			'emailchef_pluginPage_section'
 		);
@@ -157,10 +157,10 @@ class Emailchef_Admin {
 	/**
 	 * Settings page email field
 	 */
-	public function page_options_email_render() {
+	public function page_options_consumer_key_render() {
 		$options = get_option( 'emailchef_settings' );
 		?>
-        <input type='email' name='emailchef_settings[emailchef_email]' value='<?php echo $options['emailchef_email'];
+        <input type='text' name='emailchef_settings[consumer_key]' value='<?php echo $options['consumer_key'];
 		?>'>
 		<?php
 
@@ -169,11 +169,11 @@ class Emailchef_Admin {
 	/**
 	 * Settings page password field
 	 */
-	public function page_options_password_render() {
+	public function page_options_consumer_secret_render() {
 		$options = get_option( 'emailchef_settings' );
 		?>
-        <input type='password' name='emailchef_settings[emailchef_password]'
-               value='<?php echo $options['emailchef_password'];
+        <input type='password' name='emailchef_settings[consumer_secret]'
+               value='<?php echo $options['consumer_secret'];
 		       ?>'>
 		<?php
 
@@ -190,14 +190,13 @@ class Emailchef_Admin {
 	 * Called by ajax in settings pages to check for right login data.
 	 */
 	public function page_options_ajax_check_login() {
-		global $wpdb; // this is how you get access to the database
 
-		$user     = $_POST['email'];
-		$password = $_POST['password'];
+		$consumer_key     = sanitize_text_field($_POST['consumer_key']);
+		$consumer_secret = sanitize_text_field($_POST['consumer_secret']);
 
 		try {
 			$getAuthenticationTokenCommand = new \EMailChef\Command\Api\GetAuthenticationTokenCommand();
-			$accessKey                     = $getAuthenticationTokenCommand->execute( $user, $password );
+			$getAuthenticationTokenCommand->execute( $consumer_key, $consumer_secret );
 
 			$result = true;
 		} catch ( Exception $e ) {
@@ -251,14 +250,12 @@ class Emailchef_Admin {
 		$formData = $driver->getForm( $id );
 
 		$settings = get_option( 'emailchef_settings' );
-		if ( ! $settings || ! isset( $settings['emailchef_email'] ) || ! $settings['emailchef_email'] || ! isset( $settings['emailchef_password'] ) || ! $settings['emailchef_password'] ) {
+        if (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) {
 			throw new \Exception( __( 'Please add authentication details in Settings panel', 'emailchef' ) );
 		}
-		$user     = $settings['emailchef_email'];
-		$password = $settings['emailchef_password'];
 
-		$getAuthenticationTokenCommand = new \EMailChef\Command\Api\GetAuthenticationTokenCommand();
-		$accessKey                     = $getAuthenticationTokenCommand->execute( $user, $password );
+        $consumer_key = $settings['consumer_key'];
+        $consumer_secret = $settings['consumer_secret'];
 
 		if ( isset( $formData['listId'] ) && $formData['listId'] !== null ) {
 
@@ -266,7 +263,7 @@ class Emailchef_Admin {
 			$found         = false;
 
 			$getListsIntegration = new GetListsIntegrationCommand();
-			$integrations        = $getListsIntegration->execute( $accessKey, $formData['listId'] );
+			$integrations        = $getListsIntegration->execute( $consumer_key, $consumer_secret, $formData['listId'] );
 
 			foreach ( $integrations as $integration ) {
 				if ( $integration->id == 5 && $integration->website == get_site_url() ) {
@@ -282,14 +279,14 @@ class Emailchef_Admin {
 				 */
 
 				$updateListsIntegration = new UpdateListsIntegrationCommand();
-				$updateListsIntegration->execute( $accessKey, $formData['listId'], $idIntegration );
+				$updateListsIntegration->execute( $consumer_key, $consumer_secret, $formData['listId'], $idIntegration );
 
 			} else {
 				/**
 				 * Create integration logo
 				 */
 				$createListsIntegration = new CreateListsIntegrationCommand();
-				$createListsIntegration->execute( $accessKey, $formData['listId'] );
+				$createListsIntegration->execute( $consumer_key, $consumer_secret, $formData['listId'] );
 			}
 		}
 
@@ -304,7 +301,7 @@ class Emailchef_Admin {
 					$name        = $field['title'];
 
 					$placeHolder =  str_replace( '-', '_', sanitize_title_with_dashes( $field['title'] ) );
-					$createCustomFieldCommand->execute( $accessKey, $formData['listId'], $type, $name, $placeHolder );
+					$createCustomFieldCommand->execute( $consumer_key, $consumer_secret, $formData['listId'], $type, $name, $placeHolder );
 					$dataContent['field'][$field['id']] = $placeHolder;
 				}
 			}

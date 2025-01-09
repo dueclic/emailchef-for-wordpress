@@ -36,21 +36,13 @@ abstract class Emailchef_Drivers_Forms_Abstract
         $form = Emailchef_Forms_Option::getForm($this, $id);
 
         $settings = get_option('emailchef_settings');
-        if (!$settings || !isset($settings['emailchef_email']) || !$settings['emailchef_email'] || !isset($settings['emailchef_password']) || !$settings['emailchef_password']) {
+        if (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) {
             throw new \Exception(__('Please add authentication details in Settings panel', 'emailchef'));
         }
-        $user = $settings['emailchef_email'];
-        $password = $settings['emailchef_password'];
-        $accessKey = null;
+        $consumer_key = $settings['consumer_key'];
+        $consumer_secret = $settings['consumer_secret'];
 
-        // get lists
-        try {
-            $getAuthenticationTokenCommand = new \EMailChef\Command\Api\GetAuthenticationTokenCommand();
-            $accessKey = $getAuthenticationTokenCommand->execute($user, $password);
-        } catch (\Exception $e) {
-            throw new \Exception(__('Unable to authenticate', 'emailchef'));
-        }
-        $lists = (new GetListsCommand())->execute($accessKey, false);
+        $lists = (new GetListsCommand())->execute($consumer_key, $consumer_secret, false);
 
         // single list fields
         $listFields = array();
@@ -67,8 +59,8 @@ abstract class Emailchef_Drivers_Forms_Abstract
                 $form['listId'] = null;
             } else {
                 // Load fields map
-                $predefinedFields = (new GetPredefinedFieldsCommand())->execute($accessKey);
-                $customFields = (new GetListFieldsCommand())->execute($form['listId'], $accessKey);
+                $predefinedFields = (new GetPredefinedFieldsCommand())->execute($consumer_key, $consumer_secret);
+                $customFields = (new GetListFieldsCommand())->execute($form['listId'], $consumer_key, $consumer_secret);
                 $listFieldsMerge = array_merge($predefinedFields, $customFields);
                 foreach ($listFieldsMerge as $listField) {
                     $listFields[] = array(
@@ -154,16 +146,14 @@ abstract class Emailchef_Drivers_Forms_Abstract
 
         try {
             $settings = get_option('emailchef_settings');
-            if (!$settings || !isset($settings['emailchef_email']) || !$settings['emailchef_email'] || !isset($settings['emailchef_password']) || !$settings['emailchef_password']) {
+            if (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) {
                 throw new \Exception(__('Please add authentication details in Settings panel', 'emailchef'));
             }
-            $user = $settings['emailchef_email'];
-            $password = $settings['emailchef_password'];
+            $consumer_key = $settings['consumer_key'];
+            $consumer_secret = $settings['consumer_secret'];
 
-            $getAuthenticationTokenCommand = new \EMailChef\Command\Api\GetAuthenticationTokenCommand();
-            $accessKey = $getAuthenticationTokenCommand->execute($user, $password);
             $importContactsCommand = new CreateContactCommand();
-	        $importContactsCommand->execute($listId, $toSend, $accessKey);
+	        $importContactsCommand->execute($listId, $toSend, $consumer_key, $consumer_secret);
         } catch (\Exception $e) {
             // Ignoring to prevent errors!
         }
