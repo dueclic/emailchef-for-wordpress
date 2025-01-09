@@ -4,7 +4,7 @@
 class Emailchef_Drivers_Forms_Elementor extends Emailchef_Drivers_Forms_Abstract
 {
     public $pluginPath = 'elementor/elementor.php';
-    public $pluginName = 'Elementor';
+    public $pluginName = 'Elementor Form';
 
     private function find_form_by_id( $elements, $form_id ) {
         foreach ( $elements as $element ) {
