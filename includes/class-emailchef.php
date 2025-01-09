@@ -126,7 +126,7 @@ class emailchef
     {
         $plugin_i18n = new Emailchef_i18n();
 
-        $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
+        $this->loader->add_action('init', $plugin_i18n, 'load_plugin_textdomain');
     }
 
     /**
@@ -165,8 +165,8 @@ class emailchef
             }
             $driver->intercept();
         }
-    }	
-	
+    }
+
     /**
      * Run the loader to execute all of the hooks with WordPress.
      *
