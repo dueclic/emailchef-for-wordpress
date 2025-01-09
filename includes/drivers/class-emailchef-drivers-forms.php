@@ -5,6 +5,7 @@ require_once plugin_dir_path(dirname(__FILE__)) . 'drivers/forms/class-emailchef
 require_once plugin_dir_path(dirname(__FILE__)) . 'drivers/forms/class-emailchef-drivers-forms-jetpack.php';
 require_once plugin_dir_path(dirname(__FILE__)) . 'drivers/forms/class-emailchef-drivers-forms-wpforms-lite.php';
 require_once plugin_dir_path(dirname(__FILE__)) . 'drivers/forms/class-emailchef-drivers-forms-wpforms.php';
+require_once plugin_dir_path(dirname(__FILE__)) . 'drivers/forms/class-emailchef-drivers-forms-elementor.php';
 
 class Emailchef_Drivers_Forms
 {
@@ -16,6 +17,7 @@ class Emailchef_Drivers_Forms
             new Emailchef_Drivers_Forms_Jetpack(),
             new Emailchef_Drivers_Forms_WPFormsLite(),
             new Emailchef_Drivers_Forms_WPForms(),
+            new Emailchef_Drivers_Forms_Elementor()
         );
     }
 }
