@@ -30,15 +30,23 @@ abstract class Emailchef_Drivers_Forms_Abstract
         return array();
     }
 
+    /**
+     * @throws Exception
+     */
+    private function getEmailchefSettings(){
+        $settings = get_option('emailchef_settings');
+        if (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) {
+            throw new \Exception(__('Please add authentication details in Settings panel', 'emailchef'));
+        }
+        return $settings;
+    }
+
     public function getForm($id)
     {
         Emailchef_Forms_Option::load();
         $form = Emailchef_Forms_Option::getForm($this, $id);
 
-        $settings = get_option('emailchef_settings');
-        if (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) {
-            throw new \Exception(__('Please add authentication details in Settings panel', 'emailchef'));
-        }
+        $settings = $this->getEmailchefSettings();
         $consumer_key = $settings['consumer_key'];
         $consumer_secret = $settings['consumer_secret'];
 
@@ -145,10 +153,7 @@ abstract class Emailchef_Drivers_Forms_Abstract
         }
 
         try {
-            $settings = get_option('emailchef_settings');
-            if (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) {
-                throw new \Exception(__('Please add authentication details in Settings panel', 'emailchef'));
-            }
+            $settings = $this->getEmailchefSettings();
             $consumer_key = $settings['consumer_key'];
             $consumer_secret = $settings['consumer_secret'];
 
