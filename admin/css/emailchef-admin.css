@@ -1,6 +1,6 @@
 #wpbody-content {
-    padding-top:110px;
-    background:url('./../img/logo.png') no-repeat top 20px left;
+    padding-top:130px;
+    background:url('./../img/logo.png') no-repeat center 20px;
 }
 /** Do not display update in these pages **/
 .update-nag{
@@ -8,8 +8,46 @@
 }
 
 
-
 /***/
+
+.ecf-login-form{
+    display: block;
+    margin-top: 1em;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ecf-login-form-signup{
+    margin-bottom: 2.5em;
+}
+.ecf-login-form label{
+    display: block;
+    margin-bottom: .5em;
+    font-size: 1.2em;
+}
+.ecf-login-form input[ type="text" ],
+.ecf-login-form input[ type="password"]{
+    display: block;
+    width: 100%;
+}
+.ecf-login-form-control-group{
+    margin-bottom: 1.5em;
+}
+.ecf-login-form label.ecf-login-form-get-api{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ecf-login-form label.ecf-login-form-get-api a{
+    font-size: .8em;
+}
+.ecf-text-center,
+.ecf-text-center p{
+    text-align: center;
+}
+
+
+
 
 .error-field{
    color: red;
