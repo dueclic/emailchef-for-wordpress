@@ -31,6 +31,9 @@
                 continue;
             }
             $forms = $driver->getForms();
+            if (count($forms) == 0) {
+                continue;
+            }
             ?>
             <div class="emailchef-form card accordion-container">
                 <h2><?php echo $driver->getName() ?></h2>
