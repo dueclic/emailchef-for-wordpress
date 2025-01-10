@@ -4,7 +4,7 @@ namespace EMailChef\Command\Api;
 
 use EMailChef\Service\ApiService;
 
-class GetAuthenticationTokenCommand
+class GetAccountCurrentCommand
 {
     protected $apiService;
 

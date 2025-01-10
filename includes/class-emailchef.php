@@ -152,8 +152,8 @@ class emailchef
 
         if ($settings && isset($settings['consumer_key']) && $settings['consumer_key'] && isset($settings['consumer_secret']) && $settings['consumer_secret']) {
             try {
-                $getAuthenticationTokenCommand = new \EMailChef\Command\Api\GetAuthenticationTokenCommand();
-                $getAuthenticationTokenCommand->execute($settings['consumer_key'], $settings['consumer_secret']);
+                $getAccountCurrentCommand = new \EMailChef\Command\Api\GetAccountCurrentCommand();
+                $getAccountCurrentCommand->execute($settings['consumer_key'], $settings['consumer_secret']);
 
             } catch (Exception $e) {
                 if ($e->getCode() === 'auth_failed') {

@@ -122,6 +122,11 @@ class Emailchef_Admin {
      * Forms page
      */
     public function page_forms() {
+
+        $settings = get_option('emailchef_settings');
+        $getAccountCurrentCommand = new \EMailChef\Command\Api\GetAccountCurrentCommand();
+        $account = $getAccountCurrentCommand->execute($settings['consumer_key'], $settings['consumer_secret']);
+
         include_once plugin_dir_path( __FILE__ ) . '../includes/class-emailchef-forms-option.php';
         include_once plugin_dir_path( __FILE__ ) . '../includes/drivers/class-emailchef-drivers-forms.php';
         include_once plugin_dir_path( __FILE__ ) . 'partials/emailchef-page-forms-display.php';
@@ -174,8 +179,8 @@ class Emailchef_Admin {
         $consumer_secret = sanitize_text_field($_POST['consumer_secret']);
 
         try {
-            $getAuthenticationTokenCommand = new \EMailChef\Command\Api\GetAuthenticationTokenCommand();
-            $getAuthenticationTokenCommand->execute( $consumer_key, $consumer_secret );
+            $getAccountCurrentCommand = new \EMailChef\Command\Api\GetAccountCurrentCommand();
+            $getAccountCurrentCommand->execute( $consumer_key, $consumer_secret );
 
             $result = true;
         } catch ( Exception $e ) {
