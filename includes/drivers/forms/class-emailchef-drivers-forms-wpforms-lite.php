@@ -10,15 +10,17 @@ class Emailchef_Drivers_Forms_WPFormsLite extends Emailchef_Drivers_Forms_Abstra
     {
         $ret   = array();
         $forms = wpforms()->form->get();
-        foreach ($forms as $key => $row) {
-            $ret[] = array(
-                'id'    => $row->ID,
-                'title' => sprintf(
-                    __('<strong>%s</strong> - page ID %s', 'emailchef'),
-                    $row->post_title, $row->ID
-                ),
-                //'title' => $row->post_title,
-            );
+        if ($forms) {
+            foreach ($forms as $key => $row) {
+                $ret[] = array(
+                    'id' => $row->ID,
+                    'title' => sprintf(
+                        __('<strong>%s</strong> - page ID %s', 'emailchef'),
+                        $row->post_title, $row->ID
+                    ),
+                    //'title' => $row->post_title,
+                );
+            }
         }
 
         return $ret;
