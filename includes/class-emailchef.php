@@ -156,8 +156,10 @@ class emailchef
                 $getAuthenticationTokenCommand->execute($settings['consumer_key'], $settings['consumer_secret']);
 
             } catch (Exception $e) {
-                delete_option('emailchef_settings');
-                update_option("emailchef_invalid_credentials_notice", true );
+                if ($e->getCode() === 'auth_failed') {
+                    delete_option('emailchef_settings');
+                    update_option("emailchef_invalid_credentials_notice", true);
+                }
             }
         }
     }
