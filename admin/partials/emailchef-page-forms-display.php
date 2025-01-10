@@ -4,7 +4,7 @@
 
 <div class="ecf-main-container">
     <div class="ecf-main-account">
-        <p><img src="img/logo.png"></p>
+        <p><img src="<?php echo plugins_url('/admin/img/logo.png', EMAILCHEF_PLUGIN_FILE_PATH); ?>"></p>
         <h2><?php _e("Emailchef Account", "emailchef"); ?></h2>
         <div class="ecf-account-status">
             <div class="ecf-account-connected"></div>
