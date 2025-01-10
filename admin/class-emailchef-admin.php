@@ -63,7 +63,7 @@ class Emailchef_Admin {
         if ( $hook != 'toplevel_page_emailchef' && $hook != 'emailchef_page_emailchef-options' ) {
             return;
         }
-        wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/emailchef-admin.css', array(), $this->version, 'all' );
+        wp_enqueue_style( $this->plugin_name.'-admin', plugin_dir_url( __FILE__ ) . 'css/emailchef-admin.css', array(), $this->version, 'all' );
     }
 
     /**
