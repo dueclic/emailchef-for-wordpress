@@ -10,8 +10,7 @@
 
     <p class="ecf-text-center ecf-login-form-signup">
         <?php
-        echo sprintf(__('Not a member? <a
-               target="_blank" href="%s">Sign up for free.</a> ', 'emailchef'), "https://app.emailchef.com/apps/demo/quicksignup");
+        echo sprintf(__('Not a member? <a target="_blank" href="%s">Sign up for free.</a> ', 'emailchef'), "https://app.emailchef.com/apps/demo/quicksignup");
         ?>
     </p>
 
@@ -22,8 +21,7 @@
             <label for="consumer_key" class="ecf-login-form-get-api">
                 <?php _e('Consumer Key', 'emailchef'); ?>:
                 <a href="https://app.emailchef.com/build/#/settings/apikeys" target="_blank"
-                   class="ecf-get-api"><?php _e('Get API
-                    Key', 'emailchef'); ?></a>
+                   class="ecf-get-api"><?php _e('Get API Key', 'emailchef'); ?></a>
             </label>
 
             <input class="ecf-input" type="text" value="<?php echo $options['consumer_key']; ?>" id="consumer_key"

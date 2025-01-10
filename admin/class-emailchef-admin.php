@@ -88,8 +88,9 @@ class Emailchef_Admin {
             <div class="notice notice-error is-dismissible">
                 <p>
                     <?php
-                    echo sprintf(__('Emailchef API keys are invalid, please reconnect. <a
-               target="_blank" href="%s">Go to settings</a> ', 'emailchef'), admin_url("admin.php?page=emailchef"));
+                    echo sprintf(
+                            __('Emailchef API keys are invalid, please reconnect. <a target="_blank" href="%s">Go to settings</a> ', 'emailchef'), admin_url("admin.php?page=emailchef")
+                    );
                     ?>
             </div>
             <?php

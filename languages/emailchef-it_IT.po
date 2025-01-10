@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Emailchef\n"
-"POT-Creation-Date: 2023-11-29 10:26+0100\n"
-"PO-Revision-Date: 2023-11-29 10:27+0100\n"
+"POT-Creation-Date: 2025-01-10 16:34+0100\n"
+"PO-Revision-Date: 2025-01-10 16:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: Emailchef <info@dueclic.com>\n"
 "Language: it\n"
@@ -10,54 +10,62 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/class-emailchef-admin.php:90
-msgid "Forms"
-msgstr "Forms"
+#: ../admin/class-emailchef-admin.php:80
+msgid "Are you sure you want to disconnect your account?"
+msgstr "Sei sicuro di vole"
 
-#: ../admin/class-emailchef-admin.php:94
-#: ../admin/partials/emailchef-page-settings-display.php:3
-msgid "Settings"
-msgstr "Impostazioni"
+#: ../admin/class-emailchef-admin.php:92
+#, php-format
+msgid ""
+"Emailchef API keys are invalid, please reconnect. <a target=\"_blank\" "
+"href=\"%s\">Go to settings</a> "
+msgstr ""
 
-#: ../admin/class-emailchef-admin.php:135
+#: ../admin/class-emailchef-admin.php:155
 msgid "Account details"
 msgstr "Dettagli account"
 
-#: ../admin/class-emailchef-admin.php:142
-msgid "Email"
-msgstr "Email"
-
-#: ../admin/class-emailchef-admin.php:150
-msgid "Password"
-msgstr "Password"
-
-#: ../admin/class-emailchef-admin.php:186
-#, php-format
-msgid ""
-"Please provide same login information used to login in <a target=\"_blank\" "
-"href=\"%s\">emailchef.com</a> website. Or <a target=\"_blank\" "
-"href=\"%s\">click here</a> to try it for free."
+#: ../admin/class-emailchef-admin.php:162
+#: ../admin/partials/emailchef-page-settings-display.php:23
+msgid "Consumer Key"
 msgstr ""
-"Utilizza le stesse credenziali con cui accedi al tuo account <a "
-"target=\"_blank\" href=\"%s\">emailchef.com </a>. Oppure <a "
-"target=\"_blank\" href=\"%s\"> clicca qui </a> per provare gratis eMailChef."
 
-#: ../admin/class-emailchef-admin.php:255
-#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:40
-#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:143
+#: ../admin/class-emailchef-admin.php:170
+#: ../admin/partials/emailchef-page-settings-display.php:52
+msgid "Consumer Secret"
+msgstr ""
+
+#: ../admin/class-emailchef-admin.php:252
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:39
 msgid "Please add authentication details in Settings panel"
 msgstr "Aggiungi le credenziali di accesso nel pannello Impostazioni"
 
-#: ../admin/partials/emailchef-page-forms-display.php:1
-msgid "Emailchef Forms"
+#: ../admin/partials/emailchef-page-forms-display.php:10
+#, fuzzy
+#| msgid "Account details"
+msgid "Account connected"
+msgstr "Dettagli account"
+
+#: ../admin/partials/emailchef-page-forms-display.php:14
+#, fuzzy
+#| msgid "Emailchef Forms"
+msgid "Emailchef Account"
 msgstr "Moduli Emailchef"
 
-#: ../admin/partials/emailchef-page-forms-display.php:2
+#: ../admin/partials/emailchef-page-forms-display.php:18
+msgid "Disconnect account"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-display.php:25
+msgid "Website Forms"
+msgstr ""
+
+#: ../admin/partials/emailchef-page-forms-display.php:26
 #, php-format
 msgid ""
 "Connect contact forms to automatically populate your <a target=\"_blank\" "
@@ -66,17 +74,21 @@ msgstr ""
 "Collega i tuoi moduli di contatto per popolare automaticamente le tue liste "
 "su <a target=\"_blank\" href=\"%s\">Emailchef</a>."
 
-#: ../admin/partials/emailchef-page-forms-display.php:3
+#: ../admin/partials/emailchef-page-forms-display.php:27
 msgid "These are the contact forms found in your site:"
 msgstr "Questi sono i moduli di contatto all'interno del tuo sito:"
 
-#: ../admin/partials/emailchef-page-forms-display.php:31
+#: ../admin/partials/emailchef-page-forms-display.php:55
 msgid "warning: connection required!"
-msgstr "Attenzione: connessione richiesta!"
+msgstr "attenzione: connessione richiesta!"
 
-#: ../admin/partials/emailchef-page-forms-display.php:35
+#: ../admin/partials/emailchef-page-forms-display.php:59
 msgid "Loading.."
 msgstr "Caricamento in corso..."
+
+#: ../admin/partials/emailchef-page-forms-display.php:77
+msgid "No forms found"
+msgstr ""
 
 #: ../admin/partials/emailchef-page-forms-form.php:6
 msgid "Emailchef List:"
@@ -128,30 +140,35 @@ msgstr "Reset"
 msgid "Save"
 msgstr "Salva"
 
-#: ../admin/partials/emailchef-page-settings-display.php:10
-#: ../admin/partials/emailchef-page-settings-display.php:41
-msgid "Test Login"
-msgstr "Test Login"
+#: ../admin/partials/emailchef-page-settings-display.php:13
+#, php-format
+msgid ""
+"Not a member? <a\n"
+"               target=\"_blank\" href=\"%s\">Sign up for free.</a> "
+msgstr ""
 
-#: ../admin/partials/emailchef-page-settings-display.php:35
-msgid "Please Wait.."
-msgstr "Attendere prego..."
+#: ../admin/partials/emailchef-page-settings-display.php:25
+msgid ""
+"Get API\n"
+"                    Key"
+msgstr ""
 
-#: ../admin/partials/emailchef-page-settings-display.php:43
+#: ../admin/partials/emailchef-page-settings-display.php:62
+msgid "Login"
+msgstr "Login"
+
+#: ../admin/partials/emailchef-page-settings-display.php:97
 msgid "Login correct!"
 msgstr "Accesso riuscito!"
 
-#: ../admin/partials/emailchef-page-settings-display.php:46
+#: ../admin/partials/emailchef-page-settings-display.php:101
 msgid "Login failed"
 msgstr "Accesso non riuscito"
 
-#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:51
-msgid "Unable to authenticate"
-msgstr "Impossibile autenticare"
-
 #: ../includes/drivers/forms/class-emailchef-drivers-forms-contactform7.php:22
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-elementor.php:86
 #: ../includes/drivers/forms/class-emailchef-drivers-forms-jetpack.php:25
-#: ../includes/drivers/forms/class-emailchef-drivers-forms-wpforms-lite.php:17
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-wpforms-lite.php:18
 #, php-format
 msgid "<strong>%s</strong> - page ID %s"
 msgstr "<strong>%s</strong> - ID Pagina %s"
@@ -161,6 +178,35 @@ msgstr "<strong>%s</strong> - ID Pagina %s"
 msgid "<strong>%s</strong> - form %s"
 msgstr "<strong>%s</strong> - Modulo %s"
 
-#: ../includes/drivers/forms/class-emailchef-drivers-forms-wpforms-lite.php:74
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-wpforms-lite.php:76
 msgid "Please insert only one choice in checkbox field"
 msgstr "Inserisci una sola scelta nel campo casella di controllo"
+
+#~ msgid "Forms"
+#~ msgstr "Forms"
+
+#~ msgid "Settings"
+#~ msgstr "Impostazioni"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid "Password"
+#~ msgstr "Password"
+
+#, php-format
+#~ msgid ""
+#~ "Please provide same login information used to login in <a "
+#~ "target=\"_blank\" href=\"%s\">emailchef.com</a> website. Or <a "
+#~ "target=\"_blank\" href=\"%s\">click here</a> to try it for free."
+#~ msgstr ""
+#~ "Utilizza le stesse credenziali con cui accedi al tuo account <a "
+#~ "target=\"_blank\" href=\"%s\">emailchef.com </a>. Oppure <a "
+#~ "target=\"_blank\" href=\"%s\"> clicca qui </a> per provare gratis "
+#~ "eMailChef."
+
+#~ msgid "Please Wait.."
+#~ msgstr "Attendere prego..."
+
+#~ msgid "Unable to authenticate"
+#~ msgstr "Impossibile autenticare"
