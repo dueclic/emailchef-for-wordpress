@@ -45,7 +45,9 @@
 .ecf-text-center p{
     text-align: center;
 }
-
+.ecf-login-form-password-field svg{
+    height: 18px;
+}
 
 
 
@@ -66,7 +68,14 @@
     padding: 0;
     max-width:170px !important;
 }
-
+.emailchef-form .form-table input[type=text],
+.emailchef-form .form-table input[type=password],
+.emailchef-form .form-table textarea,
+.emailchef-form .form-table select
+{
+    background-color: #fff;
+    width: 200px;
+}
 .emailchef-form select {
     max-width:100% !important;
 }
@@ -118,6 +127,17 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
 }
 .accordion-section.active .not-connected {
     display: none;
+}
+.accordion-section .loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.accordion-section-content{
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    background-color: #f8f8f8;
 }
 .accordion-section .form-table-container{
     border:1px solid #ccc;

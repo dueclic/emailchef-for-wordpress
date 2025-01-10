@@ -49,8 +49,9 @@ foreach ($formsDrivers as $driver) {
 
 if(!$totFormNum){
 	?>
-	<p>No forms found</p>
+	<div class="notice notice-warning notice-alt">
+        <p>No forms found</p>
+    </div>
 	<?php
 }
-
 ?>
