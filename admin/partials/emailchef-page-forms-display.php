@@ -50,7 +50,7 @@ foreach ($formsDrivers as $driver) {
 if(!$totFormNum){
 	?>
 	<div class="notice notice-warning notice-alt">
-        <p>No forms found</p>
+        <p><?php _e("No forms found", "emailchef"); ?>/p>
     </div>
 	<?php
 }
