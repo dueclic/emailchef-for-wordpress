@@ -1,4 +1,3 @@
-
 /** Do not display update in these pages **/
 .update-nag{
     display:none;
@@ -71,9 +70,15 @@
 .ecf-login-form-password-field a svg {
     width: 18px;
 }
+.ecf-login-logo{
+    width: 160px;
+    margin: 10em auto 0;
+}
 
 .ecf-main-container{
     display: flex;
+    margin-top: 1em ;
+    margin-bottom: 1em ;
 }
 .ecf-main-container > div:first-child{
     border-right: 1px solid #dddddd;
@@ -89,14 +94,25 @@
 .ecf-main-forms{
     flex-grow: 1;
 }
+.ecf-forms-logo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    align-items: start;
+}
+.ecf-forms-logo svg{
+    width: 100px;
+}
 .ecf-account-status{
     display: flex;
-    gap: .5em;
     align-items: center;
+    gap: .5em;
+    font-size: .9em;
+    margin-bottom: 2rem;
 }
 .ecf-account-connected{
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: #66B75E;
 }

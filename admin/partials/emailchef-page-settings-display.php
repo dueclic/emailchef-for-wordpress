@@ -1,3 +1,6 @@
+<div class="ecf-text-center">
+    <img src="<?php echo plugins_url('/admin/img/logo-compact.svg', EMAILCHEF_PLUGIN_FILE_PATH); ?>" class="ecf-login-logo" alt="">
+</div>
 <form action="<?php echo admin_url('options.php'); ?>" method="post" class="ecf-login-form" id="ecf-login-form">
 
     <?php
