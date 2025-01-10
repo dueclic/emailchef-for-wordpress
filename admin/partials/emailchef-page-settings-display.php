@@ -1,22 +1,28 @@
 <form action="<?php echo admin_url('options.php'); ?>" method="post" class="ecf-login-form" id="ecf-login-form">
 
     <?php
-    $options = get_option( 'emailchef_settings' );
+    $options = get_option('emailchef_settings');
     settings_fields('pluginPage');
     ?>
 
-    <p class="ecf-text-center ecf-login-form-signup">Not a member? <a href="https://app.emailchef.com/apps/demo/quicksignup" target="_blank">Sign up for free</a>.</p>
+    <p class="ecf-text-center ecf-login-form-signup">
+        <?php
+        _e(sprintf(__('Not a member? <a target="_blank" href="%s">Sign up for free.</a> ', 'emailchef'), "https://app.emailchef.com/apps/demo/quicksignup"));
+        ?>
+    </p>
 
     <fieldset>
 
         <div class="ecf-login-form-control-group">
 
             <label for="consumer_key" class="ecf-login-form-get-api">
-                Consumer Key:
-                <a href="https://app.emailchef.com/build/#/settings/apikeys" target="_blank" class="ecf-get-api">Get API Key</a>
+                <?php _e('Consumer Key', 'emailchef'); ?>:
+                <a href="https://app.emailchef.com/build/#/settings/apikeys" target="_blank"
+                   class="ecf-get-api"><?php _e('Get API Key', 'emailchef'); ?></a>
             </label>
 
-            <input class="ecf-input" type="text" value="<?php echo $options['consumer_key']; ?>" id="consumer_key" name="emailchef_settings[consumer_key]">
+            <input class="ecf-input" type="text" value="<?php echo $options['consumer_key']; ?>" id="consumer_key"
+                   name="emailchef_settings[consumer_key]">
 
         </div>
 
@@ -34,15 +40,17 @@
 
                         </a>
             -->
-            <label for="consumer_secret">Consumer Secret:</label>
+            <label for="consumer_secret"><?php _e('Consumer Secret', 'emailchef'); ?>:</label>
 
-            <input class="ecf-input" type="password" id="consumer_secret" value="<?php echo $options['consumer_secret']; ?>"  name="emailchef_settings[consumer_secret]">
+            <input class="ecf-input" type="password" id="consumer_secret"
+                   value="<?php echo $options['consumer_secret']; ?>" name="emailchef_settings[consumer_secret]">
 
         </div>
 
         <div class="ecf-text-center">
 
-            <input type="button" id="ecf-login-submit" class="button button-primary" value="<?php _e('Login', 'emailchef'); ?>">
+            <input type="button" id="ecf-login-submit" class="button button-primary"
+                   value="<?php _e('Login', 'emailchef'); ?>">
 
         </div>
 
@@ -57,7 +65,7 @@
         var form = $("#ecf-login-form");
         var formSubmit = $("#ecf-login-submit");
 
-        $(formSubmit).on("click", function(){
+        $(formSubmit).on("click", function () {
             eMailChef.checkLogin(
                 $('input[name="emailchef_settings\[consumer_key\]"]').val(),
                 $('input[name="emailchef_settings\[consumer_secret\]"]').val(),
