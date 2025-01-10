@@ -102,7 +102,6 @@ class Emailchef_Admin {
 	 */
 	public function pages() {
 		add_action( 'admin_init', array( $this, 'page_options_settings' ) );
-
 		// Ajax actions
 		add_action( 'wp_ajax_emailchef_check_login', array( $this, 'page_options_ajax_check_login' ) );
 		add_action( 'wp_ajax_emailchef_forms_form', array( $this, 'page_forms_ajax_form' ) );
@@ -133,14 +132,14 @@ class Emailchef_Admin {
 		add_settings_section(
 			'emailchef_pluginPage_section',
 			__( 'Account details', 'emailchef' ),
-			array( $this, 'page_options_settings_section_callback' ),
+			[],
 			'pluginPage'
 		);
 
 		add_settings_field(
 			'emailchef_consumer_key',
 			__( 'Consumer Key', 'emailchef' ),
-			array( $this, 'page_options_consumer_key_render'),
+			[],
 			'pluginPage',
 			'emailchef_pluginPage_section'
 		);
@@ -148,42 +147,10 @@ class Emailchef_Admin {
 		add_settings_field(
 			'emailchef_consumer_secret',
 			__( 'Consumer Secret', 'emailchef' ),
-			array( $this, 'page_options_consumer_secret_render' ),
+			[],
 			'pluginPage',
 			'emailchef_pluginPage_section'
 		);
-	}
-
-	/**
-	 * Settings page email field
-	 */
-	public function page_options_consumer_key_render() {
-		$options = get_option( 'emailchef_settings' );
-		?>
-        <input type='text' name='emailchef_settings[consumer_key]' value='<?php echo $options['consumer_key'];
-		?>'>
-		<?php
-
-	}
-
-	/**
-	 * Settings page password field
-	 */
-	public function page_options_consumer_secret_render() {
-		$options = get_option( 'emailchef_settings' );
-		?>
-        <input type='password' name='emailchef_settings[consumer_secret]'
-               value='<?php echo $options['consumer_secret'];
-		       ?>'>
-		<?php
-
-	}
-
-	/**
-	 * Settings page top description
-	 */
-	public function page_options_settings_section_callback() {
-		echo sprintf( __( 'Please provide same login information used to login in <a target="_blank" href="%s">emailchef.com</a> website. Or <a target="_blank" href="%s">click here</a> to try it for free.', 'emailchef' ), 'https://emailchef.com/', 'https://app.emailchef.com/apps/demo/quicksignup' );
 	}
 
 	/**

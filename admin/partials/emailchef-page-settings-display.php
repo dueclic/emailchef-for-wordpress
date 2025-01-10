@@ -1,23 +1,9 @@
-<form action='options.php' method='post'>
-
-    <h1><?php _e("Settings", "emailchef"); ?></h1>
+<form action="<?php echo admin_url('options.php'); ?>" method="post" class="ecf-login-form" id="ecf-login-form">
 
     <?php
+    $options = get_option( 'emailchef_settings' );
     settings_fields('pluginPage');
-    do_settings_sections('pluginPage');
-
     ?>
-    <button id="emailchef-check-login" class="button"><?php echo __('Test Login', 'emailchef'); ?></button>
-    <span class="emailchef-check-login-result"></span>
-    <?php
-    submit_button();
-    ?>
-
-</form>
-
-<form class="ecf-login-form">
-
-
 
     <p class="ecf-text-center ecf-login-form-signup">Not a member? <a href="https://app.emailchef.com/apps/demo/quicksignup" target="_blank">Sign up for free</a>.</p>
 
@@ -26,13 +12,11 @@
         <div class="ecf-login-form-control-group">
 
             <label for="consumer_key" class="ecf-login-form-get-api">
-
                 Consumer Key:
                 <a href="https://app.emailchef.com/build/#/settings/apikeys" target="_blank" class="ecf-get-api">Get API Key</a>
-
             </label>
 
-            <input class="ecf-input" type="text" id="consumer_key" name="consumer_key">
+            <input class="ecf-input" type="text" value="<?php echo $options['consumer_key']; ?>" id="consumer_key" name="emailchef_settings[consumer_key]">
 
         </div>
 
@@ -52,54 +36,42 @@
 -->
             <label for="consumer_secret">Consumer Secret:</label>
 
-            <input class="ecf-input" type="password" id="consumer_secret" name="consumer_secret">
+            <input class="ecf-input" type="password" id="consumer_secret" value="<?php echo $options['consumer_secret']; ?>"  name="emailchef_settings[consumer_secret]">
 
         </div>
 
         <div class="ecf-text-center">
 
-            <?php
-            submit_button();
-            ?>
+            <input type="button" id="ecf-login-submit" class="button button-primary" value="<?php _e('Login', 'emailchef'); ?>">
 
         </div>
 
     </fieldset>
 
-</form>
+    <div class="emailchef-check-login-result"></div>
 
+</form>
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
-        var emailChefTesting = false;
-        $('input[name="emailchef_settings\[consumer_key\]"],input[name="emailchef_settings\[consumer_secret\]"]').change(function () {
-            $('.emailchef-check-login-result').removeClass('error valid').text('');
-            $('input[name="emailchef_settings\[consumer_key\]"],input[name="emailchef_settings\[consumer_secret\]"]').removeClass('error valid');
-        });
-        $('#emailchef-check-login').click(function (e) {
-            e.preventDefault();
-            if (emailChefTesting) {
-                return;
-            }
-            $('.emailchef-check-login-result').removeClass('error valid').text('');
-            $('input[name="emailchef_settings\[consumer_key\]"],input[name="emailchef_settings\[consumer_secret\]"]').removeClass('error valid');
-            emailChefTesting = true;
-            var that = this;
-            $(this).text(<?php echo json_encode(__('Please Wait..', 'emailchef')); ?>).addClass('disabled');
+
+        var form = $("#ecf-login-form");
+        var formSubmit = $("#ecf-login-submit");
+
+        $(formSubmit).on("click", function(){
             eMailChef.checkLogin(
                 $('input[name="emailchef_settings\[consumer_key\]"]').val(),
                 $('input[name="emailchef_settings\[consumer_secret\]"]').val(),
                 function (res) {
-                    emailChefTesting = false;
-                    $(that).text(<?php echo json_encode(__('Test Login', 'emailchef')); ?>).removeClass('disabled');
                     if (res) {
                         $('.emailchef-check-login-result').addClass('valid').text(<?php echo json_encode(__('Login correct!', 'emailchef')); ?>);
                         $('input[name="emailchef_settings\[consumer_key\]"],input[name="emailchef_settings\[consumer_secret\]"]').addClass('valid');
+                        $(form).trigger('submit');
                     } else {
                         $('.emailchef-check-login-result').addClass('error').text(<?php echo json_encode(__('Login failed', 'emailchef')); ?>);
                         $('input[name="emailchef_settings\[consumer_key\]"],input[name="emailchef_settings\[consumer_secret\]"]').addClass('error');
                     }
                 }
-            )
-        })
+            );
+        });
     });
 </script>
