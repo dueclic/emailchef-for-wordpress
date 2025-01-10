@@ -201,7 +201,7 @@ class Emailchef_Admin {
     public function page_options_ajax_disconnect() {
 
         delete_option('emailchef_settings');
-        delete_option(Emailchef_Forms_Option::$option);
+        delete_option(Emailchef_Forms_Option::OPTION_NAME);
 
         $data = array( 'result' => true );
 
