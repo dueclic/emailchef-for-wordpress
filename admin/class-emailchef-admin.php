@@ -114,6 +114,7 @@ class Emailchef_Admin {
         add_action( 'admin_init', array( $this, 'page_options_settings' ) );
         // Ajax actions
         add_action( 'wp_ajax_emailchef_check_login', array( $this, 'page_options_ajax_check_login' ) );
+        add_action( 'wp_ajax_emailchef_disconnect', array( $this, 'page_options_ajax_disconnect' ) );
         add_action( 'wp_ajax_emailchef_forms_form', array( $this, 'page_forms_ajax_form' ) );
     }
 
@@ -187,6 +188,15 @@ class Emailchef_Admin {
 
         wp_send_json( $data );
         //wp_die(); // this is required to terminate immediately and return a proper response
+    }
+
+    public function page_options_ajax_disconnect() {
+
+        delete_option('emailchef_settings');
+
+        $data = array( 'result' => true );
+
+        wp_send_json( $data );
     }
 
     /**

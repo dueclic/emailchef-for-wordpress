@@ -2,8 +2,9 @@
 <p><?php echo sprintf(__('Connect contact forms to automatically populate your <a target="_blank" href="%s">Emailchef</a> lists on every submission.', 'emailchef'),'https://emailchef.com/'); ?></p>
 <p><?php echo __('These are the contact forms found in your site:', 'emailchef'); ?></p>
 <script>
-	var urlToSettingsPage = <?php echo json_encode(admin_url('admin.php?page=emailchef-options')); ?>
+	var urlToSettingsPage = <?php echo json_encode(admin_url('admin.php?page=emailchef')); ?>
 </script>
+<button id="emailchef-disconnect">Disonnect</button>
 <?php
 Emailchef_Forms_Option::load();
 $formsDrivers = Emailchef_Drivers_Forms::getAll();

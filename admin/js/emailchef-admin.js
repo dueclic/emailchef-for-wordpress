@@ -19,6 +19,19 @@
     };
 
     $(document).ready(function () {
+
+        $("#emailchef-disconnect").on("click", function(){
+            var data = {
+                'action': 'emailchef_disconnect'
+            };
+
+            jQuery.post(ajaxurl, data, function (response) {
+                if (response.result){
+                    window.location.href = urlToSettingsPage;
+                }
+            });
+
+        });
         var reloadActivatedWarning = function(that){
             // Disable warning not connected or enable if necessary
             if (!$('.list-id', that).val() || !$('.content-map select option[value="email"]:selected', that).length) {
