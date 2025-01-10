@@ -13,6 +13,9 @@ class GetAccountCurrentCommand
         $this->apiService = $apiService ?: new ApiService();
     }
 
+    /**
+     * @throws \Exception
+     */
     public function execute($consumer_key, $consumer_secret)
     {
         $response = $this->apiService->call('get', '/apps/api/v1/accounts/current', [], $consumer_key, $consumer_secret);
