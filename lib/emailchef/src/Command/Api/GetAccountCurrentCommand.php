@@ -18,10 +18,7 @@ class GetAccountCurrentCommand
         $response = $this->apiService->call('get', '/apps/api/v1/accounts/current', [], $consumer_key, $consumer_secret);
         if ($response['code'] == '200') {
             return $response['body'];
-        } else if ($response['code'] == '401') {
-            throw new \Exception('Unable to login', 'auth_failed');
-        } else {
-            throw new \Exception('Unable to login', 'server_error');
         }
+        throw new \Exception('Unable to login', $response['code']);
     }
 }

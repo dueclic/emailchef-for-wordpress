@@ -162,7 +162,7 @@ class emailchef
                 $getAccountCurrentCommand->execute($settings['consumer_key'], $settings['consumer_secret']);
 
             } catch (Exception $e) {
-                if ($e->getCode() === 'auth_failed') {
+                if ($e->getCode() === 401) {
                     delete_option('emailchef_settings');
                     update_option("emailchef_invalid_credentials_notice", true);
                 }
