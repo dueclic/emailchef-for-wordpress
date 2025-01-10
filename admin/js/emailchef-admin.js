@@ -21,15 +21,20 @@
     $(document).ready(function () {
 
         $("#emailchef-disconnect").on("click", function(){
-            var data = {
-                'action': 'emailchef_disconnect'
-            };
 
-            jQuery.post(ajaxurl, data, function (response) {
-                if (response.result){
-                    window.location.href = urlToSettingsPage;
-                }
-            });
+            if (confirm(emailchefI18n.disconnect_account_confirm)) {
+
+                var data = {
+                    'action': 'emailchef_disconnect'
+                };
+
+                jQuery.post(ajaxurl, data, function (response) {
+                    if (response.result) {
+                        window.location.href = urlToSettingsPage;
+                    }
+                });
+
+            }
 
         });
         var reloadActivatedWarning = function(that){

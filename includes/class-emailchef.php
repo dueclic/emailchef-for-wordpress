@@ -66,8 +66,14 @@ class emailchef
      */
     public function __construct()
     {
-        $this->plugin_name = 'emailchef';
-        $this->version = '1.0.0';
+        if( !function_exists('get_plugin_data') ){
+            require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+        }
+
+        $plugin_data = get_plugin_data(EMAILCHEF_PLUGIN_FILE_PATH);
+
+        $this->plugin_name = $plugin_data['Name'];
+        $this->version = $plugin_data['Version'];
 
         $this->load_dependencies();
         $this->set_locale();

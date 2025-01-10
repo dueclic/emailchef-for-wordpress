@@ -22,6 +22,9 @@ if (!defined('WPINC')) {
 	die;
 }
 
+define('EMAILCHEF_PLUGIN_FILE_PATH', __FILE__);
+define('EMAILCHEF_PLUGIN_PATH', dirname(EMAILCHEF_PLUGIN_FILE_PATH));
+
 // Error logging
 function emailchef_write_log($log)
 {

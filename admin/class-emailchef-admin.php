@@ -75,7 +75,10 @@ class Emailchef_Admin {
         if ( $hook != 'toplevel_page_emailchef' && $hook != 'emailchef_page_emailchef-options' ) {
             return;
         }
-        wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/emailchef-admin.js', array( 'jquery' ), $this->version, false );
+        wp_enqueue_script( $this->plugin_name.'-admin' , plugin_dir_url( __FILE__ ) . 'js/emailchef-admin.js', array( 'jquery' ), $this->version, false );
+        wp_localize_script($this->plugin_name.'-admin', 'emailchefI18n', [
+            'disconnect_account_confirm' => __('Are you sure you want to disconnect your account?', 'emailchef')
+        ] );
     }
 
     public function emailchef_invalid_credentials_notice(){
@@ -198,6 +201,7 @@ class Emailchef_Admin {
     public function page_options_ajax_disconnect() {
 
         delete_option('emailchef_settings');
+        delete_option(Emailchef_Forms_Option::$option);
 
         $data = array( 'result' => true );
 
