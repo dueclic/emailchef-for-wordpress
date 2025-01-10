@@ -2,7 +2,10 @@
 .update-nag{
     display:none;
 }
-
+:root{
+    --ecf-error-color: #D73638;
+    --ecf-success-color: #01A32A;
+}
 
 /***/
 .truncate {
@@ -114,7 +117,7 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #66B75E;
+    background-color: var(--ecf-success-color);
 }
 .ecf-account-info {
     margin-top: .5rem;
@@ -145,7 +148,7 @@
 
 
 .error-field{
-    color: red;
+    color: var(--ecf-error-color);
 }
 
 .emailchef-form {
@@ -184,12 +187,12 @@
 
 input[name="emailchef_settings\[consumer_key\]"].error,
 input[name="emailchef_settings\[consumer_secret\]"].error {
-    border-color: red;
+    border-color: var(--ecf-error-color);
 }
 
 input[name="emailchef_settings\[consumer_key\]"].valid,
 input[name="emailchef_settings\[consumer_secret\]"].valid {
-    border-color: green;
+    border-color: var(--ecf-success-color);
 }
 
 .js .emailchef-form .control-section.open .accordion-section-title{
@@ -208,7 +211,7 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
     display: inline-block;
     float: right;
     margin-right: 20px;
-    color: red;
+    color: var(--ecf-error-color);
 }
 .accordion-section.active .not-connected {
     display: none;
@@ -232,20 +235,20 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
 }
 .accordion-section.warning .form-table-container,
 .accordion-section.warning .list-id{
-    border-color:red;
+    border-color:var(--ecf-error-color);
 }
 .accordion-section .warning-select-list{
     display:none;
-    color:red;
+    color:var(--ecf-error-color);
 }
 .accordion-section.warning .warning-select-list{
     display:block;
 }
 .accordion-section.warning-map .form-table-container{
-    border-color:red;
+    border-color:var(--ecf-error-color);
 }
 .accordion-section.warning-map .at-least-email{
-    color:red;
+    color:var(--ecf-error-color);
 }
 .accordion-section .form-table td,
 .accordion-section .form-table th{
