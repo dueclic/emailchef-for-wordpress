@@ -1,19 +1,16 @@
-#wpbody-content {
-    padding-top:130px;
-    background:url('./../img/logo.png') no-repeat center 20px;
-}
+
 /** Do not display update in these pages **/
 .update-nag{
     display:none;
 }
+
+
+/***/
 .truncate {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-/***/
-
 .ecf-login-form{
     display: block;
     margin-top: 1em;
