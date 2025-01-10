@@ -27,5 +27,9 @@ class Emailchef_Activator
      */
     public static function activate()
     {
+
+        if (!wp_next_scheduled('check_emailchef_credentials')) {
+            wp_schedule_event(time(), 'daily', 'check_emailchef_credentials');
+        }
     }
 }

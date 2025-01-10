@@ -7,8 +7,8 @@
 
     <p class="ecf-text-center ecf-login-form-signup">
         <?php
-        _e(sprintf(__('Not a member? <a
-               target="_blank" href="%s">Sign up for free.</a> ', 'emailchef'), "https://app.emailchef.com/apps/demo/quicksignup"));
+        echo sprintf(__('Not a member? <a
+               target="_blank" href="%s">Sign up for free.</a> ', 'emailchef'), "https://app.emailchef.com/apps/demo/quicksignup");
         ?>
     </p>
 

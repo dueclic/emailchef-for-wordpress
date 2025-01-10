@@ -27,5 +27,6 @@ class Emailchef_Deactivator
      */
     public static function deactivate()
     {
+        wp_clear_scheduled_hook('check_emailchef_credentials');
     }
 }

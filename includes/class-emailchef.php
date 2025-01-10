@@ -143,7 +143,23 @@ class emailchef
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
         $this->loader->add_action('admin_menu', $plugin_admin, 'menu');
+        $this->loader->add_action('admin_notices', $plugin_admin, 'emailchef_invalid_credentials_notice');
         $plugin_admin->pages();
+    }
+
+    public function check_emailchef_credentials(){
+        $settings = get_option('emailchef_settings');
+
+        if ($settings && isset($settings['consumer_key']) && $settings['consumer_key'] && isset($settings['consumer_secret']) && $settings['consumer_secret']) {
+            try {
+                $getAuthenticationTokenCommand = new \EMailChef\Command\Api\GetAuthenticationTokenCommand();
+                $getAuthenticationTokenCommand->execute('a'.$settings['consumer_key'], $settings['consumer_secret']);
+
+            } catch (Exception $e) {
+                delete_option('emailchef_settings');
+                update_option("emailchef_invalid_credentials_notice", true );
+            }
+        }
     }
 
     /**
@@ -165,6 +181,7 @@ class emailchef
             }
             $driver->intercept();
         }
+        $this->loader->add_action('check_emailchef_credentials', $this, 'check_emailchef_credentials' );
     }
 
     /**

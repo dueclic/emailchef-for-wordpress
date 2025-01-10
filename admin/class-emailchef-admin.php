@@ -78,6 +78,21 @@ class Emailchef_Admin {
         wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/emailchef-admin.js', array( 'jquery' ), $this->version, false );
     }
 
+    public function emailchef_invalid_credentials_notice(){
+        $error = get_option('emailchef_invalid_credentials_notice');
+        if ($error) {
+            ?>
+            <div class="notice notice-error is-dismissible">
+                <p>
+                    <?php
+                    echo sprintf(__('Emailchef API keys are invalid, please reconnect. <a
+               target="_blank" href="%s">Go to settings</a> ', 'emailchef'), admin_url("admin.php?page=emailchef"));
+                    ?>
+            </div>
+            <?php
+        }
+    }
+
     /**
      * Menu and submenu in admin
      */
@@ -89,7 +104,7 @@ class Emailchef_Admin {
             $this,
             (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) ? 'page_options': 'page_forms',
         ), plugin_dir_url( __FILE__ ) . 'img/icon.png', 50 );
-        
+
     }
 
     /**
@@ -115,6 +130,7 @@ class Emailchef_Admin {
      * Settings page
      */
     public function page_options() {
+        update_option('emailchef_invalid_credentials_notice', false);
         include plugin_dir_path( __FILE__ ) . 'partials/emailchef-page-settings-display.php';
     }
 
