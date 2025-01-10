@@ -153,7 +153,7 @@ class emailchef
         if ($settings && isset($settings['consumer_key']) && $settings['consumer_key'] && isset($settings['consumer_secret']) && $settings['consumer_secret']) {
             try {
                 $getAuthenticationTokenCommand = new \EMailChef\Command\Api\GetAuthenticationTokenCommand();
-                $getAuthenticationTokenCommand->execute('a'.$settings['consumer_key'], $settings['consumer_secret']);
+                $getAuthenticationTokenCommand->execute($settings['consumer_key'], $settings['consumer_secret']);
 
             } catch (Exception $e) {
                 delete_option('emailchef_settings');
