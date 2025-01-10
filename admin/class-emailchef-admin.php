@@ -82,19 +82,14 @@ class Emailchef_Admin {
      * Menu and submenu in admin
      */
     public function menu() {
+
+        $settings = get_option( 'emailchef_settings' );
+
         add_menu_page( 'emailchef', 'Emailchef', 'manage_options', 'emailchef', array(
             $this,
-            'page_forms',
+            (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) ? 'page_options': 'page_forms',
         ), plugin_dir_url( __FILE__ ) . 'img/icon.png', 50 );
-
-        add_submenu_page( 'emailchef', 'Emailchef Forms', __( 'Forms', 'emailchef' ), 'manage_options', 'emailchef', array(
-            $this,
-            'page_forms',
-        ) );
-        add_submenu_page( 'emailchef', 'Emailchef Settings', __( 'Settings', 'emailchef' ), 'manage_options', 'emailchef-options', array(
-            $this,
-            'page_options',
-        ) );
+        
     }
 
     /**
