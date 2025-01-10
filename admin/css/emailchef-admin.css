@@ -178,16 +178,8 @@
 }
 
 .emailchef-check-login-result {
-    line-height: 27px;
-    padding: 0 10px;
-}
-
-.emailchef-check-login-result.error {
-    color: red;
-}
-
-.emailchef-check-login-result.valid {
-    color: green;
+    margin-top: 1em;
+    display: none;
 }
 
 input[name="emailchef_settings\[consumer_key\]"].error,

@@ -63,7 +63,7 @@
 
     </fieldset>
 
-    <div class="emailchef-check-login-result"></div>
+    <div class="emailchef-check-login-result notice notice-alt"></div>
 
 </form>
 <script type="text/javascript">
@@ -87,18 +87,23 @@
         });
 
         $(formSubmit).on("click", function () {
+            $('.emailchef-check-login-result').removeClass('notice-error notice-success').hide();
+            $('#ecf-login-submit').prop('disabled', true);
             eMailChef.checkLogin(
                 $('input[name="emailchef_settings\[consumer_key\]"]').val(),
                 $('input[name="emailchef_settings\[consumer_secret\]"]').val(),
                 function (res) {
+
                     if (res) {
-                        $('.emailchef-check-login-result').addClass('valid').text(<?php echo json_encode(__('Login correct!', 'emailchef')); ?>);
+                        $('.emailchef-check-login-result').addClass('notice-success').html('<p> <?php echo __('Login correct!', 'emailchef'); ?> </p>').show();;
                         $('input[name="emailchef_settings\[consumer_key\]"],input[name="emailchef_settings\[consumer_secret\]"]').addClass('valid');
                         $(form).trigger('submit');
                     } else {
-                        $('.emailchef-check-login-result').addClass('error').text(<?php echo json_encode(__('Login failed', 'emailchef')); ?>);
+                        $('.emailchef-check-login-result').addClass('notice-error').html('<p> <?php echo __('Login failed', 'emailchef'); ?> </p>').show();;
                         $('input[name="emailchef_settings\[consumer_key\]"],input[name="emailchef_settings\[consumer_secret\]"]').addClass('error');
+                        $('#ecf-login-submit').prop('disabled', false);
                     }
+
                 }
             );
         });
