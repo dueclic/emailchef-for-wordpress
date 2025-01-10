@@ -44,7 +44,9 @@
             } else {
                 $('.accordion-section-content .content', that).parent().parent().addClass('active');
             }
-            reloadActivatedWarningChanging();
+            reloadActivatedWarningChanging(
+                that
+            );
         };
         var reloadActivatedWarningChanging = function(that){
             if (!$('.list-id', that).val()) {
