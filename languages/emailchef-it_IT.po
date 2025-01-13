@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Emailchef\n"
-"POT-Creation-Date: 2025-01-10 16:34+0100\n"
-"PO-Revision-Date: 2025-01-10 16:35+0100\n"
+"POT-Creation-Date: 2025-01-13 12:26+0100\n"
+"PO-Revision-Date: 2025-01-13 12:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: Emailchef <info@dueclic.com>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../admin/class-emailchef-admin.php:80
 msgid "Are you sure you want to disconnect your account?"
-msgstr "Sei sicuro di vole"
+msgstr "Sei sicuro di voler disconnettere il tuo account?"
 
 #: ../admin/class-emailchef-admin.php:92
 #, php-format
@@ -25,45 +25,43 @@ msgid ""
 "Emailchef API keys are invalid, please reconnect. <a target=\"_blank\" "
 "href=\"%s\">Go to settings</a> "
 msgstr ""
+"Le chiavi API di Emailchef non sono valide, riconnettiti. <a "
+"target=\"_blank\" href=\"%s\">Vai alle impostazioni</a>"
 
 #: ../admin/class-emailchef-admin.php:155
 msgid "Account details"
 msgstr "Dettagli account"
 
 #: ../admin/class-emailchef-admin.php:162
-#: ../admin/partials/emailchef-page-settings-display.php:23
+#: ../admin/partials/emailchef-page-settings-display.php:22
 msgid "Consumer Key"
-msgstr ""
+msgstr "Consumer Key"
 
 #: ../admin/class-emailchef-admin.php:170
-#: ../admin/partials/emailchef-page-settings-display.php:52
+#: ../admin/partials/emailchef-page-settings-display.php:50
 msgid "Consumer Secret"
-msgstr ""
+msgstr "Consumer Secret"
 
-#: ../admin/class-emailchef-admin.php:252
+#: ../admin/class-emailchef-admin.php:250
 #: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:39
 msgid "Please add authentication details in Settings panel"
 msgstr "Aggiungi le credenziali di accesso nel pannello Impostazioni"
 
 #: ../admin/partials/emailchef-page-forms-display.php:10
-#, fuzzy
-#| msgid "Account details"
 msgid "Account connected"
-msgstr "Dettagli account"
+msgstr "Account connesso"
 
 #: ../admin/partials/emailchef-page-forms-display.php:14
-#, fuzzy
-#| msgid "Emailchef Forms"
 msgid "Emailchef Account"
-msgstr "Moduli Emailchef"
+msgstr "Account Emailchef"
 
 #: ../admin/partials/emailchef-page-forms-display.php:18
 msgid "Disconnect account"
-msgstr ""
+msgstr "Disconnetti account"
 
 #: ../admin/partials/emailchef-page-forms-display.php:25
 msgid "Website Forms"
-msgstr ""
+msgstr "Moduli sul sito web"
 
 #: ../admin/partials/emailchef-page-forms-display.php:26
 #, php-format
@@ -88,7 +86,7 @@ msgstr "Caricamento in corso..."
 
 #: ../admin/partials/emailchef-page-forms-display.php:77
 msgid "No forms found"
-msgstr ""
+msgstr "Nessun form trovato"
 
 #: ../admin/partials/emailchef-page-forms-form.php:6
 msgid "Emailchef List:"
@@ -142,26 +140,24 @@ msgstr "Salva"
 
 #: ../admin/partials/emailchef-page-settings-display.php:13
 #, php-format
-msgid ""
-"Not a member? <a\n"
-"               target=\"_blank\" href=\"%s\">Sign up for free.</a> "
+msgid "Not a member? <a target=\"_blank\" href=\"%s\">Sign up for free.</a> "
+msgstr ""
+"Non sei registrato? <a target=\"_blank\" href=\"%s\">Registrati "
+"gratuitamente.</a> "
+
+#: ../admin/partials/emailchef-page-settings-display.php:24
+msgid "Get API Key"
 msgstr ""
 
-#: ../admin/partials/emailchef-page-settings-display.php:25
-msgid ""
-"Get API\n"
-"                    Key"
-msgstr ""
-
-#: ../admin/partials/emailchef-page-settings-display.php:62
+#: ../admin/partials/emailchef-page-settings-display.php:60
 msgid "Login"
 msgstr "Login"
 
-#: ../admin/partials/emailchef-page-settings-display.php:97
+#: ../admin/partials/emailchef-page-settings-display.php:98
 msgid "Login correct!"
 msgstr "Accesso riuscito!"
 
-#: ../admin/partials/emailchef-page-settings-display.php:101
+#: ../admin/partials/emailchef-page-settings-display.php:102
 msgid "Login failed"
 msgstr "Accesso non riuscito"
 
