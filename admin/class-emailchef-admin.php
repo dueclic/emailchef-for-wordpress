@@ -89,7 +89,7 @@ class Emailchef_Admin {
                 <p>
                     <?php
                     echo sprintf(
-                            __('Emailchef API keys are invalid, please reconnect. <a target="_blank" href="%s">Go to settings</a> ', 'emailchef'), admin_url("admin.php?page=emailchef")
+                            __('Emailchef API keys are invalid, please reconnect. <a target="_blank" href="%s">Go to settings</a>', 'emailchef'), admin_url("admin.php?page=emailchef")
                     );
                     ?>
             </div>

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eMailChef\n"
-"POT-Creation-Date: 2025-01-13 12:25+0100\n"
+"POT-Creation-Date: 2025-01-13 16:39+0100\n"
 "PO-Revision-Date: 2016-04-29 15:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: eMailChef <info@nicolamoretti.com>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #, php-format
 msgid ""
 "Emailchef API keys are invalid, please reconnect. <a target=\"_blank\" "
-"href=\"%s\">Go to settings</a> "
+"href=\"%s\">Go to settings</a>"
 msgstr ""
 
 #: ../admin/class-emailchef-admin.php:155
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../admin/partials/emailchef-page-settings-display.php:13
 #, php-format
-msgid "Not a member? <a target=\"_blank\" href=\"%s\">Sign up for free.</a> "
+msgid "Not a member? <a target=\"_blank\" href=\"%s\">Sign up for free.</a>"
 msgstr ""
 
 #: ../admin/partials/emailchef-page-settings-display.php:24
