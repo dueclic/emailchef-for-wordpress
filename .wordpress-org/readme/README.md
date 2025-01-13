@@ -8,26 +8,26 @@ Stable tag: 3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Emailchef: the simplest recipe to cook amazing newsletters. Automatically synchronize form submissions from Contact Form 7, FSCF and Jetpack.
+Emailchef: the simplest recipe to cook amazing newsletters. Automatically synchronize form submissions from Elementor, WPForms, Contact Form 7, FSCF and Jetpack.
 
 == Description ==
 
 **Emailchef Mail Marketing Automation**
 
-Send your email marketing campaigns through the interface provided on [Emailchef.com](https://Emailchef.com).
-With Emailchef you can choose between multiple subscription plans divided by functionality and contacts and you can also decide to subscribe to a custom plan, built to suit your needs.
+Elevate your email marketing strategy with the Emailchef for WordPress plugin, a dynamic interface that integrates directly with [Emailchef.com](https://Emailchef.com). Emailchef offers an array of subscription plans, each catering to different levels of functionality and contact management requirements. If your needs are unique, take advantage of a bespoke plan tailored just for you.
 
-This is the perfect marketing tool to add an intuitive and solid email campaign solution to your website.
+This plugin is the ideal enhancement for your site, offering a powerful and user-friendly email campaign management system.
 
-Every form submission from WPForms, Contact Form 7, Fast Secure Contact Form (FSCF) and Jetpack (more supported plugins coming: contact us for advices!) will be automatically synced with the selected Emailchef contact list.
-It also supports customized fields you can use to segment your customers! E.g. if in a form you ask for customers type (reseller, hotels, etc.) you can easily create a newsletter just for them.
+Connect your website forms seamlessly with Emailchef. Our plugin automatically captures submissions from a variety of form builders—including Elementor, WPForms, Contact Form 7, Fast Secure Contact Form (FSCF), Jetpack, and more (ask us about additional plugin support!). As responses flow in, they're instantly synchronized with your chosen Emailchef contact list.
+
+Further tailor your marketing efforts with support for custom fields, allowing for sophisticated segmentation of your audience. For instance, categorize your subscribers by their roles, such as resellers or hoteliers, and curate newsletters designed specifically for them. With Emailchef for WordPress, you're equipped to communicate with precision and impact.
 
 == Installation ==
 
 1. Upload `emailchef-for-wordpress` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Visit the new section 'Emailchef' in your dashboard and set your login information ('Emailchef' > 'Settings')
-4. Start connecting your forms through the 'Emailchef' > 'Forms' section.
+3. Visit the new section 'Emailchef' in your dashboard and set your login information
+4. Start connecting your forms through the 'Emailchef' section.
 
 == Frequently Asked Questions ==
 

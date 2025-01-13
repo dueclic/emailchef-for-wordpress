@@ -149,6 +149,7 @@
 
 .error-field{
     color: var(--ecf-error-color);
+    display: block;
 }
 
 .emailchef-form {

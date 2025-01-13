@@ -24,7 +24,7 @@
             </td>
         </tr>
         <tr>
-            <th scope="row"><?php echo __('Map', 'emailchef') ?></th>
+            <th scope="row"><?php echo __('Map', 'emailchef') ?>:</th>
             <td>
                 <div class="map-reload">
                     <p><?php echo __('Save to reload list fields', 'emailchef') ?></p>
@@ -47,7 +47,7 @@
                                     <td class="_nopadding">
                                         <?php echo htmlentities($field['title'], ENT_QUOTES) ?>
                                         <?php if($field['error']){ ?>
-                                          <small class="error-field"> [ <?php echo htmlentities($field['error'], ENT_QUOTES) ?> ] </small>
+                                          <small class="error-field"> [<?php echo htmlentities($field['error'], ENT_QUOTES) ?>] </small>
 
                                         <?php } ?>
                                     </td>
