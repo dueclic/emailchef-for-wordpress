@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eMailChef\n"
-"POT-Creation-Date: 2025-01-13 16:39+0100\n"
+"POT-Creation-Date: 2025-01-13 16:44+0100\n"
 "PO-Revision-Date: 2016-04-29 15:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: eMailChef <info@nicolamoretti.com>\n"
@@ -21,8 +21,8 @@ msgstr ""
 #: ../admin/class-emailchef-admin.php:92
 #, php-format
 msgid ""
-"Emailchef API keys are invalid, please reconnect. <a target=\"_blank\" "
-"href=\"%s\">Go to settings</a>"
+"Emailchef API keys are invalid. <a target=\"_blank\" href=\"%s\">Please "
+"reconnect</a>"
 msgstr ""
 
 #: ../admin/class-emailchef-admin.php:155
@@ -40,8 +40,7 @@ msgid "Consumer Secret"
 msgstr ""
 
 #: ../admin/class-emailchef-admin.php:250
-#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:39
-msgid "Please add authentication details in Settings panel"
+msgid "Please add authentication details."
 msgstr ""
 
 #: ../admin/partials/emailchef-page-forms-display.php:10
@@ -149,6 +148,10 @@ msgstr ""
 
 #: ../admin/partials/emailchef-page-settings-display.php:102
 msgid "Login failed"
+msgstr ""
+
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:39
+msgid "Please add authentication details in Settings panel"
 msgstr ""
 
 #: ../includes/drivers/forms/class-emailchef-drivers-forms-contactform7.php:22

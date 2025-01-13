@@ -89,7 +89,7 @@ class Emailchef_Admin {
                 <p>
                     <?php
                     echo sprintf(
-                            __('Emailchef API keys are invalid, please reconnect. <a target="_blank" href="%s">Go to settings</a>', 'emailchef'), admin_url("admin.php?page=emailchef")
+                            __('Emailchef API keys are invalid. <a target="_blank" href="%s">Please reconnect</a>', 'emailchef'), admin_url("admin.php?page=emailchef")
                     );
                     ?>
             </div>
@@ -247,7 +247,7 @@ class Emailchef_Admin {
 
         $settings = get_option( 'emailchef_settings' );
         if (!$settings || !isset($settings['consumer_key']) || !$settings['consumer_key'] || !isset($settings['consumer_secret']) || !$settings['consumer_secret']) {
-            throw new \Exception( __( 'Please add authentication details in Settings panel', 'emailchef' ) );
+            throw new \Exception( __( 'Please add authentication details.', 'emailchef' ) );
         }
 
         $consumer_key = $settings['consumer_key'];

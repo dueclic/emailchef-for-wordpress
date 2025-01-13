@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Emailchef\n"
-"POT-Creation-Date: 2025-01-13 16:39+0100\n"
-"PO-Revision-Date: 2025-01-13 16:39+0100\n"
+"POT-Creation-Date: 2025-01-13 16:44+0100\n"
+"PO-Revision-Date: 2025-01-13 16:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: Emailchef <info@dueclic.com>\n"
 "Language: it\n"
@@ -22,11 +22,11 @@ msgstr "Sei sicuro di voler disconnettere il tuo account?"
 #: ../admin/class-emailchef-admin.php:92
 #, php-format
 msgid ""
-"Emailchef API keys are invalid, please reconnect. <a target=\"_blank\" "
-"href=\"%s\">Go to settings</a>"
+"Emailchef API keys are invalid. <a target=\"_blank\" href=\"%s\">Please "
+"reconnect</a>"
 msgstr ""
-"Le chiavi API di Emailchef non sono valide, riconnettiti. <a "
-"target=\"_blank\" href=\"%s\">Vai alle impostazioni</a>"
+"Le chiavi API di Emailchef non sono valide.. <a target=\"_blank\" "
+"href=\"%s\">Rieffettua la connessione</a>"
 
 #: ../admin/class-emailchef-admin.php:155
 msgid "Account details"
@@ -43,9 +43,8 @@ msgid "Consumer Secret"
 msgstr "Consumer Secret"
 
 #: ../admin/class-emailchef-admin.php:250
-#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:39
-msgid "Please add authentication details in Settings panel"
-msgstr "Aggiungi le credenziali di accesso nel pannello Impostazioni"
+msgid "Please add authentication details."
+msgstr "Inserisci le credenziali di accesso."
 
 #: ../admin/partials/emailchef-page-forms-display.php:10
 msgid "Account connected"
@@ -139,9 +138,7 @@ msgid "Save"
 msgstr "Salva"
 
 #: ../admin/partials/emailchef-page-settings-display.php:13
-#, fuzzy, php-format
-#| msgid ""
-#| "Not a member? <a target=\"_blank\" href=\"%s\">Sign up for free.</a> "
+#, php-format
 msgid "Not a member? <a target=\"_blank\" href=\"%s\">Sign up for free.</a>"
 msgstr ""
 "Non sei registrato? <a target=\"_blank\" href=\"%s\">Registrati "
@@ -162,6 +159,10 @@ msgstr "Accesso riuscito!"
 #: ../admin/partials/emailchef-page-settings-display.php:102
 msgid "Login failed"
 msgstr "Accesso non riuscito"
+
+#: ../includes/drivers/forms/class-emailchef-drivers-forms-abstract.php:39
+msgid "Please add authentication details in Settings panel"
+msgstr "Aggiungi le credenziali di accesso nel pannello Impostazioni"
 
 #: ../includes/drivers/forms/class-emailchef-drivers-forms-contactform7.php:22
 #: ../includes/drivers/forms/class-emailchef-drivers-forms-elementor.php:86
