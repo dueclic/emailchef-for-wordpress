@@ -189,8 +189,6 @@ class Emailchef_Admin {
             $result = true;
         } catch ( Exception $e ) {
             $result = false;
-            emailchef_write_log( 'Unable to login' );
-            emailchef_write_log( $e );
         }
 
         $data = array( 'result' => $result );

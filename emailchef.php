@@ -25,18 +25,6 @@ if (!defined('WPINC')) {
 define('EMAILCHEF_PLUGIN_FILE_PATH', __FILE__);
 define('EMAILCHEF_PLUGIN_PATH', dirname(EMAILCHEF_PLUGIN_FILE_PATH));
 
-// Error logging
-function emailchef_write_log($log)
-{
-	if (true === WP_DEBUG) {
-		if (is_array($log) || is_object($log)) {
-			error_log('Emailchef' . print_r($log, true));
-		} else {
-			error_log('Emailchef' . $log);
-		}
-	}
-}
-
 // Load Emailchef library
 include plugin_dir_path(__FILE__) . 'lib/emailchef/vendor/autoload.php';
 
