@@ -32,7 +32,7 @@ class Emailchef_i18n
 	    load_plugin_textdomain(
             'emailchef',
             false,
-            dirname(dirname(plugin_basename(__FILE__))) . '/languages/'
+            dirname(plugin_basename(EMAILCHEF_PLUGIN_FILE_PATH)) . '/languages'
         );
     }
 }

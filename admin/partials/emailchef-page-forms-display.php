@@ -11,7 +11,6 @@
                 <div class="ecf-account-connected"></div>
             </div>
         </div>
-        <!--h2><?php _e("Emailchef Account", "emailchef"); ?></h2-->
         <div class="ecf-account-info">
             <span class="flex-grow-1 truncate" title="<?php echo $account->email; ?>"><strong><?php echo $account->email; ?></strong></span>
             <span>
