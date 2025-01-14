@@ -55,6 +55,7 @@
                         </div>
                         <div class="accordion-section-content">
                             <div class="loading">
+                                <img src="<?php echo esc_url( get_admin_url() . 'images/loading.gif' ); ?>" style="margin-right: 5px"/>
                                 <?php echo __('Loading..', 'emailchef');
                                 ?>
                             </div>
