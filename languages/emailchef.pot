@@ -2,14 +2,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: eMailChef\n"
-"POT-Creation-Date: 2025-01-14 12:13+0100\n"
+"POT-Creation-Date: 2025-02-11 10:40+0100\n"
 "PO-Revision-Date: 2016-04-29 15:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: eMailChef <info@nicolamoretti.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -47,38 +47,38 @@ msgstr ""
 msgid "Account connected"
 msgstr ""
 
-#: ../admin/partials/emailchef-page-forms-display.php:14
-msgid "Emailchef Account"
-msgstr ""
-
-#: ../admin/partials/emailchef-page-forms-display.php:18
+#: ../admin/partials/emailchef-page-forms-display.php:17
 msgid "Disconnect account"
 msgstr ""
 
-#: ../admin/partials/emailchef-page-forms-display.php:25
+#: ../admin/partials/emailchef-page-forms-display.php:24
 msgid "Website Forms"
 msgstr ""
 
-#: ../admin/partials/emailchef-page-forms-display.php:26
+#: ../admin/partials/emailchef-page-forms-display.php:25
 #, php-format
 msgid ""
 "Connect contact forms to automatically populate your <a target=\"_blank\" "
 "href=\"%s\">Emailchef</a> lists on every submission."
 msgstr ""
 
-#: ../admin/partials/emailchef-page-forms-display.php:27
+#: ../admin/partials/emailchef-page-forms-display.php:26
 msgid "These are the contact forms found in your site:"
 msgstr ""
 
+#: ../admin/partials/emailchef-page-forms-display.php:54
+msgid "Warning: connection required!"
+msgstr ""
+
 #: ../admin/partials/emailchef-page-forms-display.php:55
-msgid "warning: connection required!"
+msgid "List connected"
 msgstr ""
 
-#: ../admin/partials/emailchef-page-forms-display.php:59
-msgid "Loading.."
+#: ../admin/partials/emailchef-page-forms-display.php:60
+msgid "Loading..."
 msgstr ""
 
-#: ../admin/partials/emailchef-page-forms-display.php:77
+#: ../admin/partials/emailchef-page-forms-display.php:78
 msgid "No forms found"
 msgstr ""
 

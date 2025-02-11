@@ -201,7 +201,8 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
     background: #F47200;
     /*font-weight: bold;*/
 }
-.js .emailchef-form  .control-section.open .accordion-section-title .not-connected{
+.js .emailchef-form  .control-section.open .accordion-section-title .not-connected,
+.js .emailchef-form  .control-section.open .accordion-section-title .connected{
     color: #FFF;
 }
 .control-section.open .accordion-section-title:after{
@@ -216,6 +217,15 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
 }
 .accordion-section.active .not-connected {
     display: none;
+}
+.accordion-section .connected {
+    display: none;
+    float: right;
+    margin-right: 20px;
+    color: var(--ecf-success-color);
+}
+.accordion-section.active .connected {
+    display: inline-block;
 }
 .accordion-section .loading{
     display: flex;

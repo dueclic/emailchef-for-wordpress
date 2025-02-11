@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Emailchef\n"
-"POT-Creation-Date: 2025-01-14 12:13+0100\n"
-"PO-Revision-Date: 2025-01-14 12:23+0100\n"
+"POT-Creation-Date: 2025-02-11 10:22+0100\n"
+"PO-Revision-Date: 2025-02-11 10:22+0100\n"
 "Last-Translator: \n"
 "Language-Team: Emailchef <info@dueclic.com>\n"
 "Language: it\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -25,8 +25,8 @@ msgid ""
 "Emailchef API keys are invalid. <a target=\"_blank\" href=\"%s\">Please "
 "reconnect</a>"
 msgstr ""
-"Le chiavi API di Emailchef non sono valide.. <a target=\"_blank\" "
-"href=\"%s\">Rieffettua la connessione</a>"
+"Le chiavi API di Emailchef non sono valide. <a target=\"_blank\" "
+"href=\"%s\">Si prega di riconnettersi</a>"
 
 #: ../admin/class-emailchef-admin.php:155
 msgid "Account details"
@@ -50,19 +50,15 @@ msgstr "Inserisci le credenziali di accesso."
 msgid "Account connected"
 msgstr "Account connesso"
 
-#: ../admin/partials/emailchef-page-forms-display.php:14
-msgid "Emailchef Account"
-msgstr "Account Emailchef"
-
-#: ../admin/partials/emailchef-page-forms-display.php:18
+#: ../admin/partials/emailchef-page-forms-display.php:17
 msgid "Disconnect account"
 msgstr "Disconnetti account"
 
-#: ../admin/partials/emailchef-page-forms-display.php:25
+#: ../admin/partials/emailchef-page-forms-display.php:24
 msgid "Website Forms"
 msgstr "Moduli sul sito web"
 
-#: ../admin/partials/emailchef-page-forms-display.php:26
+#: ../admin/partials/emailchef-page-forms-display.php:25
 #, php-format
 msgid ""
 "Connect contact forms to automatically populate your <a target=\"_blank\" "
@@ -71,19 +67,23 @@ msgstr ""
 "Collega i tuoi moduli di contatto per popolare automaticamente le tue liste "
 "su <a target=\"_blank\" href=\"%s\">Emailchef</a>."
 
-#: ../admin/partials/emailchef-page-forms-display.php:27
+#: ../admin/partials/emailchef-page-forms-display.php:26
 msgid "These are the contact forms found in your site:"
 msgstr "Questi sono i moduli di contatto all'interno del tuo sito:"
 
+#: ../admin/partials/emailchef-page-forms-display.php:54
+msgid "Warning: connection required!"
+msgstr "Attenzione: connessione richiesta!"
+
 #: ../admin/partials/emailchef-page-forms-display.php:55
-msgid "warning: connection required!"
-msgstr "attenzione: connessione richiesta!"
+msgid "List connected"
+msgstr "Lista collegata"
 
-#: ../admin/partials/emailchef-page-forms-display.php:59
-msgid "Loading.."
-msgstr "Caricamento in corso..."
+#: ../admin/partials/emailchef-page-forms-display.php:60
+msgid "Loading..."
+msgstr "Caricamento..."
 
-#: ../admin/partials/emailchef-page-forms-display.php:77
+#: ../admin/partials/emailchef-page-forms-display.php:78
 msgid "No forms found"
 msgstr "Nessun form trovato"
 
@@ -110,7 +110,7 @@ msgid ""
 "</em>"
 msgstr ""
 "Associare i campi del modulo con i campi della lista su Emailchef. <br> <em "
-"class = \"at-least-email\"> Almeno un campo email deve essere associato per "
+"class=\"at-least-email\"> Almeno un campo email deve essere associato per "
 "abilitare la connessione. </em>"
 
 #: ../admin/partials/emailchef-page-forms-form.php:34
@@ -180,6 +180,9 @@ msgstr "<strong>%s</strong> - Modulo %s"
 #: ../includes/drivers/forms/class-emailchef-drivers-forms-wpforms-lite.php:76
 msgid "Please insert only one choice in checkbox field"
 msgstr "Inserisci una sola scelta nel campo casella di controllo"
+
+#~ msgid "Emailchef Account"
+#~ msgstr "Account Emailchef"
 
 #~ msgid "Forms"
 #~ msgstr "Forms"
