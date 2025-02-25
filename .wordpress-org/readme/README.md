@@ -42,6 +42,9 @@ Register for free in Emailchef and get your free trial period. Higher plans can 
 
 == Changelog ==
 
+= 3.4 =
+* Responsive fixes in Admin Area
+
 = 3.3 =
 * Elementor integration - added the ability to select Elementor forms not only from pages but also from global widgets.
 
