@@ -50,7 +50,7 @@
                         <div class="accordion-section-title"
                              id="<?php echo esc_attr(sanitize_title($driver->getName()) . '-' . $form['id']);
                              ?>">
-                            <?php echo $form['title'] ?>
+                            <span><?php echo $form['title'] ?></span>
                             <span class="not-connected"><?php echo __('Warning: connection required!', 'emailchef'); ?></span>
                             <span class="connected"><?php echo __('List connected', 'emailchef'); ?></span>
                         </div>

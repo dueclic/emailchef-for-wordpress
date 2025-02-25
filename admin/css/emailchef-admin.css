@@ -92,7 +92,7 @@
 }
 .ecf-main-account{
     flex-grow: 0;
-    min-width: 260px;
+    width: 260px;
 }
 .ecf-main-forms{
     flex-grow: 1;
@@ -195,11 +195,12 @@ input[name="emailchef_settings\[consumer_key\]"].valid,
 input[name="emailchef_settings\[consumer_secret\]"].valid {
     border-color: var(--ecf-success-color);
 }
-
+.js .emailchef-form .control-section .accordion-section-title{
+    display: flex;
+}
 .js .emailchef-form .control-section.open .accordion-section-title{
     color: #FFF;
     background: #F47200;
-    /*font-weight: bold;*/
 }
 .js .emailchef-form  .control-section.open .accordion-section-title .not-connected,
 .js .emailchef-form  .control-section.open .accordion-section-title .connected{
@@ -208,11 +209,11 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
 .control-section.open .accordion-section-title:after{
     color: #FFF;
 }
-
 .accordion-section .not-connected {
     display: inline-block;
-    float: right;
+    /*float: right;*/
     margin-right: 20px;
+    margin-left: auto;
     color: var(--ecf-error-color);
 }
 .accordion-section.active .not-connected {
@@ -220,8 +221,9 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
 }
 .accordion-section .connected {
     display: none;
-    float: right;
+    /*float: right;*/
     margin-right: 20px;
+    margin-left: auto;
     color: var(--ecf-success-color);
 }
 .accordion-section.active .connected {
@@ -261,15 +263,13 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
 .accordion-section.warning-map .at-least-email{
     color:var(--ecf-error-color);
 }
-.accordion-section .form-table td,
-.accordion-section .form-table th{
+.accordion-section .form-table tr{
     border-bottom: 1px solid #ddd;
 }
 .accordion-section .form-table th{
     font-size: 1.1em;
 }
-.accordion-section .form-table tr:last-child td,
-.accordion-section .form-table tr:last-child th{
+.accordion-section .form-table tr:has(td):last-child{
     border: none;
 }
 .accordion-section .form-table th {
@@ -283,3 +283,38 @@ input[name="emailchef_settings\[consumer_secret\]"].valid {
     padding-bottom: 1em;
 }
 
+
+@media screen and (max-width: 599px) {
+    .ecf-main-container {
+        flex-direction: column;
+        margin-right: 1em;
+    }
+    .ecf-main-container > div:first-child {
+        border-right: none;
+        border-bottom: 1px solid #dddddd;
+        padding-right: 0;
+        padding-bottom: 1em;
+    }
+    .ecf-main-account {
+        flex-grow: 0;
+        width: 100%;
+    }
+    .ecf-account-status {
+        margin-bottom: .5em;
+    }
+    .ecf-main-container > div:last-child {
+        padding-left: 0;
+    }
+    .emailchef-form{
+        margin-right: 0;
+    }
+    .js .emailchef-form .control-section .accordion-section-title{
+        flex-direction: column;
+    }
+    .js .emailchef-form .control-section .accordion-section-title span{
+        margin: 0;
+    }
+    .ecf-form {
+        margin-right: 0;
+    }
+}
