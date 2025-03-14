@@ -76,7 +76,7 @@ class emailchef
         $this->version = $plugin_data['Version'];
 
         $this->load_dependencies();
-        $this->set_locale();
+        //$this->set_locale();
         $this->define_admin_hooks();
         $this->define_public_hooks();
     }
