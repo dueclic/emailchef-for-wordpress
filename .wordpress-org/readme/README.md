@@ -1,5 +1,5 @@
 === Emailchef ===
-Contributors: dueclic
+Contributors: emailchef,dueclic
 Donate link: https://www.dueclic.com
 Tags: emailchef, newsletter, marketing, automation, form
 Requires at least: 5.0
