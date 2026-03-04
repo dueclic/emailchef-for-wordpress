@@ -42,10 +42,8 @@ Register for free in Emailchef and get your free trial period. Higher plans can 
 
 == Changelog ==
 = 3.5.2 =
-* Security: added capability check and nonce verification on AJAX endpoints
-* Fix: sanitize POST parameters in page_forms_ajax_form
-* bump version to 3.5.2
-
+* Fix: correct closing paragraph tag in forms display
+* Fix: add nonce and capability checks to AJAX endpoints
 = 3.5.1 =
 * Extended compatibility to WP 6.9
 

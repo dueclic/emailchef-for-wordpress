@@ -146,45 +146,54 @@ build_changelog_from_commits() {
     fi
 }
 
-# ── Add changelog entry ───────────────────────────────────────────────────────
-if grep -qE "^= $PLUGIN_VERSION =" "$README_FILE"; then
-    echo "Changelog      : entry for $PLUGIN_VERSION already exists (no change)"
+# ── Add/update changelog entry ────────────────────────────────────────────────
+if [[ -n "$CHANGELOG_OVERRIDE" ]]; then
+    ENTRY_BODY="$CHANGELOG_OVERRIDE"
 else
-    if [[ -n "$CHANGELOG_OVERRIDE" ]]; then
-        ENTRY_BODY="$CHANGELOG_OVERRIDE"
-    else
-        ENTRY_BODY=$(build_changelog_from_commits)
-    fi
+    ENTRY_BODY=$(build_changelog_from_commits)
+fi
 
-    # Build the block to insert (version header + body lines)
-    INSERT_BLOCK=$'\n'"= $PLUGIN_VERSION ="$'\n'"$ENTRY_BODY"
-
-    # Insert the block right after "== Changelog =="
-    python3 - "$README_FILE" "$INSERT_BLOCK" <<'PYEOF'
-import sys
+PY_SCRIPT=$(cat <<'PYEOF'
+import sys, re
 
 readme_path = sys.argv[1]
-block       = sys.argv[2]
+version     = sys.argv[2]
+body        = sys.argv[3]
 
 with open(readme_path, 'r') as f:
     content = f.read()
 
 marker = '== Changelog =='
-idx = content.find(marker)
-if idx == -1:
+if marker not in content:
     print("ERROR: '== Changelog ==' not found in README", file=sys.stderr)
     sys.exit(1)
 
-insert_at = idx + len(marker)
-content = content[:insert_at] + block + content[insert_at:]
+new_block = f'\n= {version} =\n{body}'
+
+# Remove existing entry for this version (header + its lines up to next header or EOF)
+pattern = rf'\n= {re.escape(version)} =\n.*?(?=\n= |\Z)'
+existed = bool(re.search(pattern, content, flags=re.DOTALL))
+content = re.sub(pattern, '', content, flags=re.DOTALL)
+
+# Insert fresh block right after "== Changelog =="
+insert_at = content.find(marker) + len(marker)
+content = content[:insert_at] + new_block + content[insert_at:]
 
 with open(readme_path, 'w') as f:
     f.write(content)
-PYEOF
 
+print('update' if existed else 'insert')
+PYEOF
+)
+
+PYEOF_RESULT=$(python3 -c "$PY_SCRIPT" "$README_FILE" "$PLUGIN_VERSION" "$ENTRY_BODY")
+
+if [[ "$PYEOF_RESULT" == "update" ]]; then
+    echo "Changelog      : updated entry for $PLUGIN_VERSION"
+else
     echo "Changelog      : added entry for $PLUGIN_VERSION"
-    echo "$ENTRY_BODY" | sed 's/^/               > /'
 fi
+echo "$ENTRY_BODY" | sed 's/^/               > /'
 
 # ── Create git tag ────────────────────────────────────────────────────────────
 if $CREATE_TAG; then
