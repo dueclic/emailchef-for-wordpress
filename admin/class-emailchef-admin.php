@@ -77,7 +77,8 @@ class Emailchef_Admin {
         }
         wp_enqueue_script( $this->plugin_name.'-admin' , plugin_dir_url( __FILE__ ) . 'js/emailchef-admin.js', array( 'jquery' ), $this->version, false );
         wp_localize_script($this->plugin_name.'-admin', 'emailchefI18n', [
-            'disconnect_account_confirm' => __('Are you sure you want to disconnect your account?', 'emailchef')
+            'disconnect_account_confirm' => __('Are you sure you want to disconnect your account?', 'emailchef'),
+            'nonce' => wp_create_nonce('emailchef_ajax_nonce'),
         ] );
     }
 
@@ -179,6 +180,12 @@ class Emailchef_Admin {
      */
     public function page_options_ajax_check_login() {
 
+        check_ajax_referer('emailchef_ajax_nonce', 'nonce');
+
+        if ( ! current_user_can('manage_options') ) {
+            wp_send_json_error(null, 403);
+        }
+
         $consumer_key     = sanitize_text_field($_POST['consumer_key']);
         $consumer_secret = sanitize_text_field($_POST['consumer_secret']);
 
@@ -199,6 +206,12 @@ class Emailchef_Admin {
 
     public function page_options_ajax_disconnect() {
 
+        check_ajax_referer('emailchef_ajax_nonce', 'nonce');
+
+        if ( ! current_user_can('manage_options') ) {
+            wp_send_json_error(null, 403);
+        }
+
         delete_option('emailchef_settings');
         delete_option(Emailchef_Forms_Option::OPTION_NAME);
 
@@ -212,6 +225,12 @@ class Emailchef_Admin {
      */
     public function page_forms_ajax_form() {
         global $wpdb; // this is how you get access to the database
+
+        check_ajax_referer('emailchef_ajax_nonce', 'nonce');
+
+        if ( ! current_user_can('manage_options') ) {
+            wp_send_json_error(null, 403);
+        }
         include_once plugin_dir_path( __FILE__ ) . '../includes/class-emailchef-forms-option.php';
         include_once plugin_dir_path( __FILE__ ) . '../includes/drivers/class-emailchef-drivers-forms.php';
 

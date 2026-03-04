@@ -9,7 +9,8 @@
             var data = {
                 'action': 'emailchef_check_login',
                 'consumer_key': email,
-                'consumer_secret': password
+                'consumer_secret': password,
+                'nonce': emailchefI18n.nonce
             };
 
             jQuery.post(ajaxurl, data, function (response) {
@@ -25,7 +26,8 @@
             if (confirm(emailchefI18n.disconnect_account_confirm)) {
 
                 var data = {
-                    'action': 'emailchef_disconnect'
+                    'action': 'emailchef_disconnect',
+                    'nonce': emailchefI18n.nonce
                 };
 
                 jQuery.post(ajaxurl, data, function (response) {
@@ -111,7 +113,8 @@
             var data = {
                 'action': 'emailchef_forms_form',
                 'id': $(that).data('id'),
-                'driver': $(that).data('driver')
+                'driver': $(that).data('driver'),
+                'nonce': emailchefI18n.nonce
             };
 
             jQuery.post(ajaxurl, data, function (response) {
