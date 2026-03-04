@@ -195,14 +195,26 @@ else
 fi
 echo "$ENTRY_BODY" | sed 's/^/               > /'
 
-# ── Create git tag ────────────────────────────────────────────────────────────
+# ── Commit + tag ──────────────────────────────────────────────────────────────
 if $CREATE_TAG; then
     if git tag | grep -qx "$PLUGIN_VERSION"; then
         echo "Git tag        : $PLUGIN_VERSION already exists (no change)"
     else
+        # Stage only the files this script touches
+        git add "$PLUGIN_FILE" "$README_FILE"
+
+        # Commit if there is anything staged
+        if ! git diff --cached --quiet; then
+            git commit -m "chore(release): bump version to $PLUGIN_VERSION"
+            echo "Git commit     : chore(release): bump version to $PLUGIN_VERSION"
+        else
+            echo "Git commit     : nothing to commit (working tree clean)"
+        fi
+
+        # Tag the current HEAD (the commit above, or the existing one)
         git tag "$PLUGIN_VERSION"
         echo "Git tag        : created $PLUGIN_VERSION"
-        echo "               > Push with: git push origin $PLUGIN_VERSION"
+        echo "               > Push with: git push origin HEAD $PLUGIN_VERSION"
     fi
 fi
 
